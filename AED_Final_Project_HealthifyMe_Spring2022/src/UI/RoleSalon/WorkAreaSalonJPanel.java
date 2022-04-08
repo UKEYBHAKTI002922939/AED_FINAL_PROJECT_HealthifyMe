@@ -29,7 +29,7 @@ public class WorkAreaSalonJPanel extends javax.swing.JPanel {
         organizationjLabel = new javax.swing.JLabel();
         valuejLabel = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        workrequestjTable = new javax.swing.JTable();
         assignjButton = new javax.swing.JButton();
         processjButton = new javax.swing.JButton();
         declinejButton = new javax.swing.JButton();
@@ -45,7 +45,7 @@ public class WorkAreaSalonJPanel extends javax.swing.JPanel {
         valuejLabel.setText("<value>");
         add(valuejLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 30, -1, -1));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        workrequestjTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -53,7 +53,7 @@ public class WorkAreaSalonJPanel extends javax.swing.JPanel {
                 "Message", "Sender", "Reciever", "Status"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(workrequestjTable);
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 150, -1, 138));
 
@@ -88,9 +88,9 @@ public class WorkAreaSalonJPanel extends javax.swing.JPanel {
     private javax.swing.JButton declinejButton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     private javax.swing.JLabel organizationjLabel;
     private javax.swing.JButton processjButton;
     private javax.swing.JLabel valuejLabel;
+    private javax.swing.JTable workrequestjTable;
     // End of variables declaration//GEN-END:variables
 }
