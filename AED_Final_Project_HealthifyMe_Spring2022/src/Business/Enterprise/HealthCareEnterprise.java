@@ -11,7 +11,7 @@ package Business.Enterprise;
 import Business.Role.Role;
 import java.util.ArrayList;
 
-public class HealthCareEnterprise {
+public class HealthCareEnterprise extends Enterprise{
     public HealthCareEnterprise(String name){
         super(name,Enterprise.EnterpriseType.HealthCareEnt);
     }
