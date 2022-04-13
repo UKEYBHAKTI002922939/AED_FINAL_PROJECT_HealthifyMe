@@ -13,7 +13,7 @@ import java.util.ArrayList;
  *
  * @author anky
  */
-public class MeditationOrganization {
+public class MeditationOrganization extends Organization{
      public MeditationOrganization() {
         super(Organization.Type.Meditation.getValue());
     }
