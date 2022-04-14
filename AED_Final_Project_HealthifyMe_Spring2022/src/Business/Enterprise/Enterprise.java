@@ -4,6 +4,8 @@
  */
 package Business.Enterprise;
 
+import Business.Organization.Organization;
+import Business.Organization.OrganizationDirectory;
 /**
  *
  * @author agarw
