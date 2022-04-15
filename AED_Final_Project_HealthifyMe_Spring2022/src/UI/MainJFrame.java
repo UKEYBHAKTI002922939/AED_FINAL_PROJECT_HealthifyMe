@@ -58,6 +58,8 @@ public class MainJFrame extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jSplitPane1.setDividerLocation(300);
+
         jPanel1.setBackground(new java.awt.Color(255, 153, 51));
         jPanel1.setPreferredSize(new java.awt.Dimension(1800, 1800));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
