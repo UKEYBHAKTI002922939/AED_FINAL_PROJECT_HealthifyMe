@@ -44,7 +44,7 @@ public class WorkAreaDieticianJPanel extends javax.swing.JPanel {
         value.setText("<value>");
         add(value, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 40, -1, -1));
 
-        workRequestJTable.setBackground(new java.awt.Color(0, 153, 255));
+        workRequestJTable.setBackground(new java.awt.Color(231, 200, 237));
         workRequestJTable.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 7, true));
         workRequestJTable.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         workRequestJTable.setModel(new javax.swing.table.DefaultTableModel(

@@ -29,7 +29,7 @@ public class WorkAreaSalonJPanel extends javax.swing.JPanel {
         organizationjLabel = new javax.swing.JLabel();
         valuejLabel = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        workRequestjTable = new javax.swing.JTable();
         assignjButton = new javax.swing.JButton();
         processjButton = new javax.swing.JButton();
         declinejButton = new javax.swing.JButton();
@@ -45,7 +45,7 @@ public class WorkAreaSalonJPanel extends javax.swing.JPanel {
         valuejLabel.setText("<value>");
         add(valuejLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 30, -1, -1));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        workRequestjTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -53,29 +53,35 @@ public class WorkAreaSalonJPanel extends javax.swing.JPanel {
                 "Message", "Sender", "Reciever", "Status"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(workRequestjTable);
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 150, -1, 138));
 
+        assignjButton.setBackground(new java.awt.Color(163, 206, 215));
         assignjButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         assignjButton.setText("Assign");
+        assignjButton.setBorder(null);
         assignjButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 assignjButtonActionPerformed(evt);
             }
         });
-        add(assignjButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(53, 350, 98, 42));
+        add(assignjButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 350, 98, 30));
 
+        processjButton.setBackground(new java.awt.Color(163, 206, 215));
         processjButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         processjButton.setText("Process");
-        add(processjButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(222, 350, 117, 42));
+        processjButton.setBorder(null);
+        add(processjButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(229, 350, 110, 30));
 
+        declinejButton.setBackground(new java.awt.Color(163, 206, 215));
         declinejButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         declinejButton.setText("Decline");
-        add(declinejButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(411, 350, 94, 42));
+        declinejButton.setBorder(null);
+        add(declinejButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 350, 94, 30));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UI/RoleSalon/beauiful.jpg"))); // NOI18N
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 580, 400));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/spa_img.jpg"))); // NOI18N
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 640, 460));
     }// </editor-fold>//GEN-END:initComponents
 
     private void assignjButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_assignjButtonActionPerformed
@@ -88,9 +94,9 @@ public class WorkAreaSalonJPanel extends javax.swing.JPanel {
     private javax.swing.JButton declinejButton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     private javax.swing.JLabel organizationjLabel;
     private javax.swing.JButton processjButton;
     private javax.swing.JLabel valuejLabel;
+    private javax.swing.JTable workRequestjTable;
     // End of variables declaration//GEN-END:variables
 }
