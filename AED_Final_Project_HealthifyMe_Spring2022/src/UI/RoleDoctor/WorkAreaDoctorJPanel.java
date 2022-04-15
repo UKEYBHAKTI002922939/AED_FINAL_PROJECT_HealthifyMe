@@ -28,37 +28,92 @@ public class WorkAreaDoctorJPanel extends javax.swing.JPanel {
 
         organizationjLabel = new javax.swing.JLabel();
         valuejLabel = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        wokRequestjTable = new javax.swing.JTable();
+        assignJButton = new javax.swing.JButton();
+        processJButton = new javax.swing.JButton();
+        declineJButton = new javax.swing.JButton();
+        imagejLabel = new javax.swing.JLabel();
+
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         organizationjLabel.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         organizationjLabel.setText("Organization");
+        add(organizationjLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 40, -1, -1));
 
         valuejLabel.setText("<value>");
+        add(valuejLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 40, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(50, 50, 50)
-                .addComponent(organizationjLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(valuejLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(375, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(40, 40, 40)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(organizationjLabel)
-                    .addComponent(valuejLabel))
-                .addContainerGap(383, Short.MAX_VALUE))
-        );
+        wokRequestjTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Message", "Sender", "Reciever", "Status"
+            }
+        ));
+        jScrollPane1.setViewportView(wokRequestjTable);
+
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 150, 470, 138));
+
+        assignJButton.setBackground(new java.awt.Color(194, 217, 231));
+        assignJButton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        assignJButton.setText("Assign Request");
+        assignJButton.setBorder(null);
+        assignJButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                assignJButtonActionPerformed(evt);
+            }
+        });
+        add(assignJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 350, 110, 30));
+
+        processJButton.setBackground(new java.awt.Color(194, 217, 231));
+        processJButton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        processJButton.setText("Process Request");
+        processJButton.setBorder(null);
+        processJButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                processJButtonActionPerformed(evt);
+            }
+        });
+        add(processJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 350, 120, 30));
+
+        declineJButton.setBackground(new java.awt.Color(194, 217, 231));
+        declineJButton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        declineJButton.setText("Decline Request");
+        declineJButton.setBorder(null);
+        declineJButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                declineJButtonActionPerformed(evt);
+            }
+        });
+        add(declineJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 350, 120, 30));
+
+        imagejLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/doc.jpg"))); // NOI18N
+        add(imagejLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 720, 440));
     }// </editor-fold>//GEN-END:initComponents
+
+    private void assignJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_assignJButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_assignJButtonActionPerformed
+
+    private void processJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_processJButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_processJButtonActionPerformed
+
+    private void declineJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_declineJButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_declineJButtonActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton assignJButton;
+    private javax.swing.JButton declineJButton;
+    private javax.swing.JLabel imagejLabel;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel organizationjLabel;
+    private javax.swing.JButton processJButton;
     private javax.swing.JLabel valuejLabel;
+    private javax.swing.JTable wokRequestjTable;
     // End of variables declaration//GEN-END:variables
 }
