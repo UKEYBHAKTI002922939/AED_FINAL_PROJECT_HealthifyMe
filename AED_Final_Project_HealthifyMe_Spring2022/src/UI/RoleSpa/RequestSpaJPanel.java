@@ -61,7 +61,7 @@ public class RequestSpaJPanel extends javax.swing.JPanel {
         add(RequetsjButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 320, 190, 30));
 
         image.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/spa_img.jpg"))); // NOI18N
-        add(image, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 630, 460));
+        add(image, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 640, 460));
     }// </editor-fold>//GEN-END:initComponents
 
 
