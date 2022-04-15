@@ -9,7 +9,7 @@ import Business.Network.Network;
 import Business.Organization.DieticianOrganization;
 import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
-import UserInterface.DieticianRole.DieticianWorkAreaJPanel;
+import UI.DieticianRole.DieticianWorkAreaJPanel;
 import javax.swing.JPanel;
 /**
  *
