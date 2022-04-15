@@ -4,6 +4,9 @@
  */
 package UI.Customer;
 
+import Business.EcoSystem;
+import javax.swing.JPanel;
+
 /**
  *
  * @author Simran
@@ -15,6 +18,10 @@ public class WorkAreaCustomerLoginJPanel extends javax.swing.JPanel {
      */
     public WorkAreaCustomerLoginJPanel() {
         initComponents();
+    }
+
+    public WorkAreaCustomerLoginJPanel(JPanel container, Object object, EcoSystem system, Object object0) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     /**
