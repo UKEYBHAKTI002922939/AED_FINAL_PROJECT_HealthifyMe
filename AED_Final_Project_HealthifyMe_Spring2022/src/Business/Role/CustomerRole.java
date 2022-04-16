@@ -10,7 +10,7 @@ import Business.Network.Network;
 import Business.Organization.CustomerOrganization;
 import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
-import UI.Customer.WorkAreaCustomerLoginJPanel;
+import UI.Customer.CustomerLoginWorkAreaJPanel;
 import javax.swing.JPanel;
 
 /**
@@ -31,7 +31,7 @@ public class CustomerRole extends Role {
 
     @Override
     public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business, Network network) {
-         return new WorkAreaCustomerLoginJPanel(userProcessContainer, (CustomerOrganization)organization, business, network);
+         return new CustomerLoginWorkAreaJPanel(userProcessContainer, (CustomerOrganization)organization, business, network);
     } 
  
 }

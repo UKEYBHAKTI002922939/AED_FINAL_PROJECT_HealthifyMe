@@ -10,7 +10,7 @@ import Business.Organization.DoctorOrganization;
 import Business.Organization.Organization;
 import Business.Organization.YogaOrganization;
 import Business.UserAccount.UserAccount;
-import UserInterface.VehicleRepairRole.VehicleRepairWorkAreaJPanel;
+import UI.RoleYogaInstructor.VehicleRepairWorkAreaJPanel;
 //import UserInterface.DoctorRole.DoctorWorkAreaJPanel;
 import javax.swing.JPanel;
 

@@ -8,6 +8,16 @@ package Business.WorkQueue;
  *
  * @author Simran
  */
-public class MeditationInstructorWorkRequest {
+public class MeditationInstructorWorkRequest extends WorkRequest{
+    private String MeditationInstructorAppointment;
+
+    public String getMeditationInstructorAppointment() {
+        return MeditationInstructorAppointment;
+    }
+
+    public void setMeditationInstructorAppointment(String MeditationInstructorAppointment) {
+        this.MeditationInstructorAppointment = MeditationInstructorAppointment;
+    }
+   
     
 }

@@ -152,7 +152,7 @@ public class WorkAreaCustomerJPanel extends javax.swing.JPanel {
         } else {
             JOptionPane.showMessageDialog(null, "Login successful");
             CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-            userProcessContainer.add("RequestLabTestJPanel", new WorkAreaCustomerLoginJPanel(userProcessContainer, userAccount,system, network));
+            userProcessContainer.add("RequestLabTestJPanel", new CustomerLoginWorkAreaJPanel(userProcessContainer, userAccount,system, network));
             layout.next(userProcessContainer);
         }
 
