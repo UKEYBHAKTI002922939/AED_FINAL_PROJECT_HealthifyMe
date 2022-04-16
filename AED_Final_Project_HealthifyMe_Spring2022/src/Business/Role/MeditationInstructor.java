@@ -10,7 +10,7 @@ import Business.Network.Network;
 import Business.Organization.MeditationOrganization;
 import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
-import UI.HouseCleaningRole.HouseCleanWorkAreaJPanel;
+import UI.RoleMeditationInstructor.WorkAreaMeditationInstructorJPanel;
 import javax.swing.JPanel;
 
 /**
@@ -21,7 +21,7 @@ public class MeditationInstructor extends Role{
     
     @Override
     public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business, Network network) {  
-    return new HouseCleanWorkAreaJPanel(userProcessContainer, account, (MeditationOrganization)organization, enterprise, business, network);
+    return new WorkAreaMeditationInstructorJPanel(userProcessContainer, account, (MeditationOrganization)organization, enterprise, business, network);
     }    
 
 }

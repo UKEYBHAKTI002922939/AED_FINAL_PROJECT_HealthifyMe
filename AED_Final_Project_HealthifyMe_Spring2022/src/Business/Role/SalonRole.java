@@ -11,7 +11,7 @@ import Business.Organization.DoctorOrganization;
 import Business.Organization.Organization;
 import Business.Organization.SalonOrganization;
 import Business.UserAccount.UserAccount;
-import UI.SalonRole.SalonWorkAreaJPanel;
+import UI.RoleSalon.WorkAreaSalonJPanel;
 import javax.swing.JPanel;
 
 /**
@@ -22,7 +22,7 @@ public class SalonRole extends Role{
 
     @Override
     public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business, Network network) {
-    return new SalonWorkAreaJPanel(userProcessContainer, account, (SalonOrganization)organization, enterprise, business, network);
+    return new WorkAreaSalonJPanel(userProcessContainer, account, (SalonOrganization)organization, enterprise, business, network);
     }
 
 }

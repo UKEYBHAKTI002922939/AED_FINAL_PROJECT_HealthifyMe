@@ -12,7 +12,7 @@ import Business.Organization.Organization.Type.Therapist;
 import Business.Organization.TherapistOrganization;
 import Business.Role.Role.RoleType.Therapist;
 import Business.UserAccount.UserAccount;
-import UI.VehicleCleaningRole.VehicleCleaningWorkAreaJPanel;
+import UI.RoleTherapist.WorkAreaTherapistJPanel;
 import javax.swing.JPanel;
 
 /**
@@ -23,7 +23,7 @@ public class Therapist extends Role {
 
     @Override
     public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business, Network network) {  
-    return new VehicleCleaningWorkAreaJPanel(userProcessContainer, account, (TherapistOrganization)organization, enterprise, business, network);
+    return new WorkAreaTherapistJPanel(userProcessContainer, account, (TherapistOrganization)organization, enterprise, business, network);
     }    
 
 }
