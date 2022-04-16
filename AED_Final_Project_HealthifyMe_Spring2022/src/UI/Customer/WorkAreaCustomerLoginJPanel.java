@@ -40,15 +40,31 @@ public class WorkAreaCustomerLoginJPanel extends javax.swing.JPanel {
         NetworkComboBox = new javax.swing.JComboBox<>();
         MentalHealthPanel = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
-        PersonalCarePanel = new javax.swing.JPanel();
+        TherapistService = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        personalcarejPanel = new javax.swing.JPanel();
+        PersonalCareServices = new javax.swing.JLabel();
+        SalonService = new javax.swing.JButton();
+        spaService = new javax.swing.JButton();
+        physicalhealth = new javax.swing.JPanel();
+        PhysicalHealthService = new javax.swing.JLabel();
+        jButton4 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
+        healthcare = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(204, 204, 204));
+        setBackground(new java.awt.Color(231, 200, 237));
+        setMinimumSize(new java.awt.Dimension(1800, 1800));
+        setPreferredSize(new java.awt.Dimension(1800, 1800));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        upperbannerjLabel.setBackground(new java.awt.Color(220, 145, 234));
         upperbannerjLabel.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         upperbannerjLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         upperbannerjLabel.setText("Welcome to HealthifyMe");
-        add(upperbannerjLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 20, 690, 40));
+        add(upperbannerjLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 20, 690, 40));
 
         WorkRequestJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -63,11 +79,11 @@ public class WorkAreaCustomerLoginJPanel extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(WorkRequestJTable);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 120, 550, 120));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 120, 600, 150));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel1.setText("Select Network");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 80, -1, -1));
+        jLabel1.setText("SELECT NETWORK");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 80, -1, -1));
 
         NetworkComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         NetworkComboBox.addActionListener(new java.awt.event.ActionListener() {
@@ -75,57 +91,176 @@ public class WorkAreaCustomerLoginJPanel extends javax.swing.JPanel {
                 NetworkComboBoxActionPerformed(evt);
             }
         });
-        add(NetworkComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 80, -1, 20));
+        add(NetworkComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 80, 90, 20));
+
+        MentalHealthPanel.setBackground(new java.awt.Color(255, 140, 154));
+        MentalHealthPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel3.setText("Mental Health Services");
+        MentalHealthPanel.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 20, -1, -1));
 
-        javax.swing.GroupLayout MentalHealthPanelLayout = new javax.swing.GroupLayout(MentalHealthPanel);
-        MentalHealthPanel.setLayout(MentalHealthPanelLayout);
-        MentalHealthPanelLayout.setHorizontalGroup(
-            MentalHealthPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(MentalHealthPanelLayout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addComponent(jLabel3)
-                .addContainerGap(33, Short.MAX_VALUE))
+        TherapistService.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        TherapistService.setText("Request Therapist Service");
+        MentalHealthPanel.add(TherapistService, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 200, 40));
+
+        jButton3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButton3.setText("Request Meditation Service");
+        MentalHealthPanel.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, 240, 40));
+
+        add(MentalHealthPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 310, 280, 180));
+
+        personalcarejPanel.setBackground(new java.awt.Color(199, 228, 171));
+        personalcarejPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        PersonalCareServices.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        PersonalCareServices.setText("Personal Care Services");
+        personalcarejPanel.add(PersonalCareServices, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 10, 190, 30));
+
+        SalonService.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        SalonService.setText("Request Salon Services");
+        SalonService.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SalonServiceActionPerformed(evt);
+            }
+        });
+        personalcarejPanel.add(SalonService, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 60, -1, 40));
+
+        spaService.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        spaService.setText("Request Spa Service");
+        spaService.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                spaServiceActionPerformed(evt);
+            }
+        });
+        personalcarejPanel.add(spaService, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 130, 190, 40));
+
+        add(personalcarejPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 310, 300, 190));
+
+        physicalhealth.setBackground(new java.awt.Color(242, 144, 88));
+
+        PhysicalHealthService.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        PhysicalHealthService.setText("Physical Health Service");
+
+        jButton4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButton4.setText("Request Gym Service");
+
+        jButton5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButton5.setText("Request Yoga Service ");
+
+        javax.swing.GroupLayout physicalhealthLayout = new javax.swing.GroupLayout(physicalhealth);
+        physicalhealth.setLayout(physicalhealthLayout);
+        physicalhealthLayout.setHorizontalGroup(
+            physicalhealthLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(physicalhealthLayout.createSequentialGroup()
+                .addGap(47, 47, 47)
+                .addComponent(PhysicalHealthService)
+                .addContainerGap(65, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, physicalhealthLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(physicalhealthLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, 236, Short.MAX_VALUE)
+                    .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(23, 23, 23))
         );
-        MentalHealthPanelLayout.setVerticalGroup(
-            MentalHealthPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(MentalHealthPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel3)
-                .addContainerGap(137, Short.MAX_VALUE))
+        physicalhealthLayout.setVerticalGroup(
+            physicalhealthLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(physicalhealthLayout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addComponent(PhysicalHealthService)
+                .addGap(18, 18, 18)
+                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(20, Short.MAX_VALUE))
         );
 
-        add(MentalHealthPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 280, 220, 160));
+        add(physicalhealth, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 550, 280, 150));
 
-        javax.swing.GroupLayout PersonalCarePanelLayout = new javax.swing.GroupLayout(PersonalCarePanel);
-        PersonalCarePanel.setLayout(PersonalCarePanelLayout);
-        PersonalCarePanelLayout.setHorizontalGroup(
-            PersonalCarePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
+        healthcare.setBackground(new java.awt.Color(242, 203, 100));
+
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel2.setText("Health Care Services");
+
+        jButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButton1.setText("Request Doctor's Appointment");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        jButton2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButton2.setText("Request Dietician Appointment");
+
+        javax.swing.GroupLayout healthcareLayout = new javax.swing.GroupLayout(healthcare);
+        healthcare.setLayout(healthcareLayout);
+        healthcareLayout.setHorizontalGroup(
+            healthcareLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(healthcareLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel2)
+                .addGap(70, 70, 70))
+            .addGroup(healthcareLayout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addGroup(healthcareLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(0, 22, Short.MAX_VALUE))
         );
-        PersonalCarePanelLayout.setVerticalGroup(
-            PersonalCarePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
+        healthcareLayout.setVerticalGroup(
+            healthcareLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(healthcareLayout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addComponent(jLabel2)
+                .addGap(18, 18, 18)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(15, Short.MAX_VALUE))
         );
 
-        add(PersonalCarePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 290, -1, -1));
+        add(healthcare, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 550, 290, 150));
     }// </editor-fold>//GEN-END:initComponents
 
     private void NetworkComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NetworkComboBoxActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_NetworkComboBoxActionPerformed
 
+    private void SalonServiceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalonServiceActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SalonServiceActionPerformed
+
+    private void spaServiceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_spaServiceActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_spaServiceActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel MentalHealthPanel;
     private javax.swing.JComboBox<String> NetworkComboBox;
-    private javax.swing.JPanel PersonalCarePanel;
+    private javax.swing.JLabel PersonalCareServices;
+    private javax.swing.JLabel PhysicalHealthService;
+    private javax.swing.JButton SalonService;
+    private javax.swing.JButton TherapistService;
     private javax.swing.JTable WorkRequestJTable;
+    private javax.swing.JPanel healthcare;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JPanel personalcarejPanel;
+    private javax.swing.JPanel physicalhealth;
+    private javax.swing.JButton spaService;
     private javax.swing.JLabel upperbannerjLabel;
     // End of variables declaration//GEN-END:variables
 }
