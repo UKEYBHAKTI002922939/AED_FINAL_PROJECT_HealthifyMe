@@ -3,6 +3,20 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
 package UI.RoleSpa;
+import Business.EcoSystem;
+import Business.Enterprise.Enterprise;
+import Business.Enterprise.PersonalCareEnterprise;
+import Business.Network.Network;
+import Business.Organization.Organization;
+import Business.Organization.SpaOrganization;
+import Business.UserAccount.UserAccount;
+import Business.WorkQueue.SpaWorkRequest;
+import UI.Customer.CustomerLoginWorkAreaJPanel;
+import java.awt.CardLayout;
+import java.awt.Component;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+
 
 /**
  *
@@ -13,8 +27,26 @@ public class RequestSpaJPanel extends javax.swing.JPanel {
     /**
      * Creates new form RequestSpaJPanel
      */
-    public RequestSpaJPanel() {
+    private JPanel userProcessContainer;
+    private Enterprise enterprise;
+    private UserAccount userAccount;
+    private EcoSystem system;
+    private Network sourceNetwork;
+    private Network targetNetwork;
+    
+    
+    public RequestSpaJPanel(JPanel userProcessContainer, UserAccount account, Enterprise enterprise, EcoSystem system, Network sourceNetwork, Network targetNetwork) {
         initComponents();
+        this.userProcessContainer = userProcessContainer;
+        this.enterprise = enterprise;
+        this.userAccount = account;
+        this.system = system;
+        this.sourceNetwork = sourceNetwork;
+        this.targetNetwork = targetNetwork;
+        if(null != enterprise) {
+            valueLabel.setText(enterprise.getName());
+        }
+        
     }
 
     /**
@@ -28,9 +60,9 @@ public class RequestSpaJPanel extends javax.swing.JPanel {
 
         backJButton = new javax.swing.JButton();
         enterprice = new javax.swing.JLabel();
-        valuejLabel = new javax.swing.JLabel();
+        valueLabel = new javax.swing.JLabel();
         messagejLabel = new javax.swing.JLabel();
-        messagejTextField = new javax.swing.JTextField();
+        messageJTextField = new javax.swing.JTextField();
         RequetsjButton = new javax.swing.JButton();
         image = new javax.swing.JLabel();
 
@@ -40,29 +72,96 @@ public class RequestSpaJPanel extends javax.swing.JPanel {
         backJButton.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         backJButton.setText("Back");
         backJButton.setBorder(null);
+        backJButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backJButtonActionPerformed(evt);
+            }
+        });
         add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 60, 30));
 
         enterprice.setFont(new java.awt.Font("Sitka Display", 1, 18)); // NOI18N
         enterprice.setText("Enterprise: ");
         add(enterprice, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 100, -1, -1));
 
-        valuejLabel.setText("<value>");
-        add(valuejLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 100, 50, -1));
+        valueLabel.setText("<value>");
+        add(valueLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 100, 50, -1));
 
         messagejLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         messagejLabel.setText("Message");
         add(messagejLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 210, -1, -1));
-        add(messagejTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 210, 190, -1));
+        add(messageJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 210, 190, -1));
 
         RequetsjButton.setBackground(new java.awt.Color(163, 206, 215));
         RequetsjButton.setFont(new java.awt.Font("Sitka Display", 1, 18)); // NOI18N
         RequetsjButton.setText("Request Appointment");
         RequetsjButton.setBorder(null);
+        RequetsjButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RequetsjButtonActionPerformed(evt);
+            }
+        });
         add(RequetsjButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 320, 190, 30));
 
         image.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/spa_img.jpg"))); // NOI18N
         add(image, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 640, 460));
     }// </editor-fold>//GEN-END:initComponents
+
+    private void backJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButtonActionPerformed
+        // TODO add your handling code here:
+         userProcessContainer.remove(this);
+        Component[] componentArray = userProcessContainer.getComponents();
+        Component component = componentArray[componentArray.length - 1];
+        CustomerLoginWorkAreaJPanel clwjp = (CustomerLoginWorkAreaJPanel) component;
+        clwjp.populateRequestTable(sourceNetwork);
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.previous(userProcessContainer);
+    }//GEN-LAST:event_backJButtonActionPerformed
+
+    private void RequetsjButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RequetsjButtonActionPerformed
+        // TODO add your handling code here:
+        String message = messageJTextField.getText();
+        if (!message.isEmpty()) {
+            SpaWorkRequest request = new SpaWorkRequest();
+            request.setMessage(message);
+            request.setSender(userAccount);
+            request.setStatus("Sent");
+
+            Organization org = null;
+            Enterprise ent = null;
+            if (sourceNetwork != targetNetwork) {
+                for (Enterprise enterprise : targetNetwork.getEnterpriseDirectory().getEnterpriseList()) {
+                    if (enterprise instanceof PersonalCareEnterprise) {
+                        ent = enterprise;
+                    }
+                    for (Organization organization : enterprise.getOrganizationDirectory().getOrganizationList()) {
+                        if (organization instanceof SpaOrganization) {
+                            org = organization;
+                            break;
+                        }
+                    }
+                }
+            } else {
+                for (Enterprise enterprise : sourceNetwork.getEnterpriseDirectory().getEnterpriseList()) {
+                    if (enterprise instanceof PersonalCareEnterprise) {
+                        ent = enterprise;
+                    }
+                    for (Organization organization : enterprise.getOrganizationDirectory().getOrganizationList()) {
+                        if (organization instanceof SpaOrganization) {
+                            org = organization;
+                            break;
+                        }
+                    }
+                }
+            }
+            if (org != null) {
+                org.getWorkQueue().getWorkRequestList().add(request);
+                userAccount.getWorkQueue().getWorkRequestList().add(request);
+            }
+        } else {
+            JOptionPane.showMessageDialog(this, "Please enter correct input");
+        }
+        messageJTextField.setText("");
+    }//GEN-LAST:event_RequetsjButtonActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -70,8 +169,8 @@ public class RequestSpaJPanel extends javax.swing.JPanel {
     private javax.swing.JButton backJButton;
     private javax.swing.JLabel enterprice;
     private javax.swing.JLabel image;
+    private javax.swing.JTextField messageJTextField;
     private javax.swing.JLabel messagejLabel;
-    private javax.swing.JTextField messagejTextField;
-    private javax.swing.JLabel valuejLabel;
+    private javax.swing.JLabel valueLabel;
     // End of variables declaration//GEN-END:variables
 }
