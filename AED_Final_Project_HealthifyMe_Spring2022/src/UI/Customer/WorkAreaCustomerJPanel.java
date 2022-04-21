@@ -61,7 +61,7 @@ public class WorkAreaCustomerJPanel extends javax.swing.JPanel {
         jButton3 = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         emailText = new javax.swing.JTextField();
-        jTextField1 = new javax.swing.JTextField();
+        passwordTextField = new javax.swing.JPasswordField();
         image = new javax.swing.JLabel();
 
         jPanel1.setBackground(new java.awt.Color(0, 153, 0));
@@ -70,12 +70,12 @@ public class WorkAreaCustomerJPanel extends javax.swing.JPanel {
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("USERNAME");
+        jLabel1.setText("Username");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 160, 100, -1));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("PASSWORD");
+        jLabel2.setText("Password");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 220, 90, -1));
 
         userNameTextField.addActionListener(new java.awt.event.ActionListener() {
@@ -83,9 +83,10 @@ public class WorkAreaCustomerJPanel extends javax.swing.JPanel {
                 userNameTextFieldActionPerformed(evt);
             }
         });
-        jPanel1.add(userNameTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 160, 140, 30));
+        jPanel1.add(userNameTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 160, 140, 20));
 
-        jButton1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jButton1.setBackground(new java.awt.Color(255, 255, 204));
+        jButton1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jButton1.setText("LOGIN");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -94,7 +95,8 @@ public class WorkAreaCustomerJPanel extends javax.swing.JPanel {
         });
         jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 480, 140, -1));
 
-        jButton2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jButton2.setBackground(new java.awt.Color(255, 255, 204));
+        jButton2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jButton2.setText("REGISTER");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -108,7 +110,8 @@ public class WorkAreaCustomerJPanel extends javax.swing.JPanel {
         jLabel3.setText("WELCOME");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 40, 210, -1));
 
-        jButton3.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jButton3.setBackground(new java.awt.Color(255, 255, 204));
+        jButton3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jButton3.setText("GENERATE OTP");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -119,10 +122,10 @@ public class WorkAreaCustomerJPanel extends javax.swing.JPanel {
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("EMAIL");
+        jLabel5.setText("Email");
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 290, 70, -1));
         jPanel1.add(emailText, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 290, 140, -1));
-        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 220, 140, -1));
+        jPanel1.add(passwordTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 220, 140, -1));
 
         image.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/customer.login.jpg"))); // NOI18N
         jPanel1.add(image, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1620, 1030));
@@ -145,14 +148,14 @@ public class WorkAreaCustomerJPanel extends javax.swing.JPanel {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        UserAccount userAccount = system.getUserAccountDirectory().authenticateUser(userNameTextField.getText(), jTextField1.getText());
+        UserAccount userAccount = system.getUserAccountDirectory().authenticateUser(userNameTextField.getText(), passwordTextField.getText());
         if (userAccount == null) {
             JOptionPane.showMessageDialog(null, "Invalid credentials");
             return;
         } else {
             JOptionPane.showMessageDialog(null, "Login successful");
             CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-            userProcessContainer.add("RequestLabTestJPanel", new CustomerLoginWorkAreaJPanel(userProcessContainer, userAccount,system, network));
+            userProcessContainer.add("RequestLabTestJPanel", new CustomerLoginWorkAreaJPanel(userProcessContainer, system, userAccount, network));
             layout.next(userProcessContainer);
         }
 
@@ -201,7 +204,7 @@ public class WorkAreaCustomerJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JPasswordField passwordTextField;
     private javax.swing.JTextField userNameTextField;
     // End of variables declaration//GEN-END:variables
 }

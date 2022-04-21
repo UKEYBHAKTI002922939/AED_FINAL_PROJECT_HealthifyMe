@@ -145,7 +145,7 @@ public class WorkAreaCustomerRegisterJPanel extends javax.swing.JPanel {
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(158, 93, 93));
-        jLabel1.setText("USERNAME");
+        jLabel1.setText("Username");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 320, -1, -1));
 
         userNameTextField.addActionListener(new java.awt.event.ActionListener() {
@@ -157,35 +157,35 @@ public class WorkAreaCustomerRegisterJPanel extends javax.swing.JPanel {
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(158, 93, 93));
-        jLabel2.setText("PASSWORD");
+        jLabel2.setText("Password");
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 380, 110, -1));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(158, 93, 93));
-        jLabel4.setText("RE-ENTER PASSWORD");
+        jLabel4.setText("Re-Enter Password");
         add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 380, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(158, 93, 93));
-        jLabel5.setText("FIRST NAME");
+        jLabel5.setText("First Name");
         add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 140, -1, -1));
         add(firstNameTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 140, 200, -1));
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(158, 93, 93));
-        jLabel6.setText("LAST NAME");
+        jLabel6.setText("Last Name");
         add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 200, -1, -1));
         add(lastNameTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 200, 200, -1));
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(158, 93, 93));
-        jLabel7.setText("AGE");
+        jLabel7.setText("Age");
         add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 140, -1, -1));
         add(ageTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 140, 200, -1));
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(158, 93, 93));
-        jLabel8.setText("GENDER");
+        jLabel8.setText("Gender");
         add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 200, -1, -1));
 
         genderComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
@@ -193,19 +193,19 @@ public class WorkAreaCustomerRegisterJPanel extends javax.swing.JPanel {
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(158, 93, 93));
-        jLabel9.setText("EMAIL");
+        jLabel9.setText("Email");
         add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 260, -1, -1));
         add(emailTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 260, 200, -1));
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(158, 93, 93));
-        jLabel10.setText("MOBILE NUMBER");
+        jLabel10.setText("Mobile Number");
         add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 320, -1, -1));
         add(mobileNumberTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 320, 200, -1));
 
         jLabel11.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(158, 93, 93));
-        jLabel11.setText("CITY");
+        jLabel11.setText("City");
         add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 260, 45, -1));
         add(cityTextState, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 260, 200, -1));
 
@@ -220,7 +220,7 @@ public class WorkAreaCustomerRegisterJPanel extends javax.swing.JPanel {
         });
         add(registerBtn1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, -1, -1));
 
-        registerBtn.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        registerBtn.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         registerBtn.setForeground(new java.awt.Color(158, 93, 93));
         registerBtn.setText("Register");
         registerBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -228,12 +228,12 @@ public class WorkAreaCustomerRegisterJPanel extends javax.swing.JPanel {
                 registerBtnActionPerformed(evt);
             }
         });
-        add(registerBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 470, 157, -1));
+        add(registerBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 470, 110, -1));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("WELCOME CUSTOMER");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 10, -1, -1));
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 10, -1, -1));
 
         passwordTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

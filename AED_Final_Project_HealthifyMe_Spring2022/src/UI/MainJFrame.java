@@ -12,6 +12,7 @@ import Business.Network.Network;
 import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
 import UI.Customer.CustomerLoginWorkAreaJPanel;
+import UI.Customer.WorkAreaCustomerJPanel;
 import java.awt.CardLayout;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -152,7 +153,7 @@ public class MainJFrame extends javax.swing.JFrame {
     private void customerBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_customerBtnActionPerformed
 
         CardLayout layout=(CardLayout)container.getLayout();
-        container.add("workArea", new CustomerLoginWorkAreaJPanel(container, null, system, null));
+        container.add("workArea", new WorkAreaCustomerJPanel(container, null, system, null));
         layout.next(container);
         logoutBtn.setEnabled(true);
         customerBtn.setEnabled(false);
