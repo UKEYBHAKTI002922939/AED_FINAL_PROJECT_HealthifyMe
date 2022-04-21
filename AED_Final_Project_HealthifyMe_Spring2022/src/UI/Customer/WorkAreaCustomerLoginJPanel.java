@@ -21,7 +21,7 @@ public class WorkAreaCustomerLoginJPanel extends javax.swing.JPanel {
     }
 
     public WorkAreaCustomerLoginJPanel(JPanel container, Object object, EcoSystem system, Object object0) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+//        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     /**

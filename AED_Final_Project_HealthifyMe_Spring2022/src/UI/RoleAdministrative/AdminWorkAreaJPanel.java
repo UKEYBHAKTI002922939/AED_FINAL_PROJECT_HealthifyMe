@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package UserInterface.AdministrativeRole;
+package UI.RoleAdministrative;
 
 import Business.Enterprise.Enterprise;
 import java.awt.CardLayout;
@@ -47,7 +47,7 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
         valueLabel = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(255, 0, 102));
+        setBackground(new java.awt.Color(0, 153, 153));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
@@ -64,7 +64,7 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
                 userJButtonActionPerformed(evt);
             }
         });
-        add(userJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 360, 210, -1));
+        add(userJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 230, 210, -1));
 
         manageEmployeeJButton.setBackground(new java.awt.Color(153, 153, 0));
         manageEmployeeJButton.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
@@ -74,7 +74,7 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
                 manageEmployeeJButtonActionPerformed(evt);
             }
         });
-        add(manageEmployeeJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 310, 210, -1));
+        add(manageEmployeeJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 160, 210, -1));
 
         manageOrganizationJButton.setBackground(new java.awt.Color(153, 153, 0));
         manageOrganizationJButton.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
@@ -84,23 +84,23 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
                 manageOrganizationJButtonActionPerformed(evt);
             }
         });
-        add(manageOrganizationJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 250, -1, -1));
+        add(manageOrganizationJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, -1, -1));
 
         enterpriseLabel.setBackground(new java.awt.Color(0, 153, 153));
         enterpriseLabel.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        enterpriseLabel.setForeground(new java.awt.Color(204, 51, 0));
+        enterpriseLabel.setForeground(new java.awt.Color(153, 153, 0));
         enterpriseLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         enterpriseLabel.setText("Enterprise");
         add(enterpriseLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 50, 140, 30));
 
         valueLabel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        valueLabel.setForeground(new java.awt.Color(204, 51, 0));
+        valueLabel.setForeground(new java.awt.Color(153, 153, 0));
         valueLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         add(valueLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 60, 130, 20));
 
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/Employee-Wellbeing.jpg"))); // NOI18N
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 770, 520));
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/d7af53-IconGrid_NoLogo1.png"))); // NOI18N
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 770, 530));
     }// </editor-fold>//GEN-END:initComponents
 
     private void userJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userJButtonActionPerformed

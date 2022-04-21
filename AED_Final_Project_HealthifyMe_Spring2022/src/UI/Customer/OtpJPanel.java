@@ -75,7 +75,7 @@ public class OtpJPanel extends javax.swing.JPanel {
             userProcessContainer.remove(this);
             Component[] componentArray = userProcessContainer.getComponents();
             Component component = componentArray[componentArray.length - 1];
-            CustomerWorkAreaJPanel dwjp = (CustomerWorkAreaJPanel) component;
+            WorkAreaCustomerJPanel dwjp = (WorkAreaCustomerJPanel) component;
             dwjp.validateOtp(true);
             CardLayout layout = (CardLayout) userProcessContainer.getLayout();
             layout.previous(userProcessContainer);
@@ -84,7 +84,7 @@ public class OtpJPanel extends javax.swing.JPanel {
             userProcessContainer.remove(this);
             Component[] componentArray = userProcessContainer.getComponents();
             Component component = componentArray[componentArray.length - 1];
-            CustomerWorkAreaJPanel dwjp = (CustomerWorkAreaJPanel) component;
+            WorkAreaCustomerJPanel dwjp = (WorkAreaCustomerJPanel) component;
             dwjp.validateOtp(false);
             CardLayout layout = (CardLayout) userProcessContainer.getLayout();
             layout.previous(userProcessContainer);

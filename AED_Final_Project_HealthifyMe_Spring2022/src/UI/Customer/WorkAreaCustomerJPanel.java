@@ -11,7 +11,7 @@ import Business.Network.Network;
 import Business.Organization.CustomerOrganization;
 import Business.UserAccount.UserAccount;
 import Business.Utils.OTP;
-import Business.Utils.SendMail;
+import Business.Utils.SendEmail;
 import Business.Utils.ValidationUtils;
 import java.awt.CardLayout;
 import static java.time.Clock.system;
@@ -145,14 +145,14 @@ public class WorkAreaCustomerJPanel extends javax.swing.JPanel {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        UserAccount userAccount = system.getUserAccountDirectory().authenticateUser(userNameTextField.getText(), passwordTextField.getText());
+        UserAccount userAccount = system.getUserAccountDirectory().authenticateUser(userNameTextField.getText(), jTextField1.getText());
         if (userAccount == null) {
             JOptionPane.showMessageDialog(null, "Invalid credentials");
             return;
         } else {
             JOptionPane.showMessageDialog(null, "Login successful");
             CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-            userProcessContainer.add("RequestLabTestJPanel", new CustomerLoginWorkAreaJPanel(userProcessContainer, system, userAccount, network));
+            userProcessContainer.add("RequestLabTestJPanel", new WorkAreaCustomerLoginJPanel(userProcessContainer, userAccount,system, network));
             layout.next(userProcessContainer);
         }
 
@@ -161,7 +161,7 @@ public class WorkAreaCustomerJPanel extends javax.swing.JPanel {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        userProcessContainer.add("RequestLabTestJPanel", new CustomerRegisterWorkAreaJPanel(userProcessContainer, system));
+        userProcessContainer.add("RequestLabTestJPanel", new WorkAreaCustomerRegisterJPanel(userProcessContainer, system));
         layout.next(userProcessContainer);
     }//GEN-LAST:event_jButton2ActionPerformed
 
@@ -174,7 +174,7 @@ public class WorkAreaCustomerJPanel extends javax.swing.JPanel {
         }
         OTP otp = new OTP();
         String otpGenerated =  otp.getOTP(4);
-        SendMail.sendMail(otpGenerated, emailText.getText());
+        SendEmail.sendMail(otpGenerated, emailText.getText());
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         userProcessContainer.add("OtpJPanel", new OtpJPanel(userProcessContainer, otpGenerated));
         layout.next(userProcessContainer);

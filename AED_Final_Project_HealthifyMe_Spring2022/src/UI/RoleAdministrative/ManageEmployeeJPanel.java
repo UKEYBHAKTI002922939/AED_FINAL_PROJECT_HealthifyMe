@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package UserInterface.AdministrativeRole;
+package UI.RoleAdministrative;
 
 import Business.Employee.Employee;
 import Business.Organization.Organization;
@@ -80,15 +80,18 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
         addJButton = new javax.swing.JButton();
         organizationJComboBox = new javax.swing.JComboBox();
         jLabel1 = new javax.swing.JLabel();
-        backJButton = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         nameJTextField = new javax.swing.JTextField();
         organizationEmpJComboBox = new javax.swing.JComboBox();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        backJButton = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(233, 169, 21));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        organizationJTable.setBackground(new java.awt.Color(194, 153, 73));
         organizationJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null},
@@ -117,16 +120,19 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(organizationJTable);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(342, 186, 480, 92));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 210, 530, 110));
 
-        addJButton.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        addJButton.setBackground(new java.awt.Color(153, 102, 0));
+        addJButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        addJButton.setForeground(new java.awt.Color(255, 255, 255));
         addJButton.setText("Create Employee");
+        addJButton.setBorderPainted(false);
         addJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addJButtonActionPerformed(evt);
             }
         });
-        add(addJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(555, 526, -1, -1));
+        add(addJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 280, 170, 30));
 
         organizationJComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         organizationJComboBox.addActionListener(new java.awt.event.ActionListener() {
@@ -134,36 +140,48 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
                 organizationJComboBoxActionPerformed(evt);
             }
         });
-        add(organizationJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(658, 107, 81, -1));
+        add(organizationJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 150, 140, -1));
 
-        jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(153, 102, 0));
         jLabel1.setText("Organization");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(342, 107, -1, -1));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 150, -1, -1));
 
-        backJButton.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(153, 102, 0));
+        jLabel2.setText("Name");
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 210, 60, -1));
+        add(nameJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 210, 126, 20));
+
+        organizationEmpJComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        add(organizationEmpJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 160, 120, -1));
+
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(153, 102, 0));
+        jLabel3.setText("Organization");
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 160, 120, -1));
+
+        jLabel4.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/Staff-Wellbeing-Survey-Template-Thumbnail-2.png"))); // NOI18N
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 50, 1510, 900));
+
+        backJButton.setBackground(new java.awt.Color(153, 102, 0));
+        backJButton.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
+        backJButton.setForeground(new java.awt.Color(255, 255, 255));
         backJButton.setText("Back");
+        backJButton.setBorderPainted(false);
         backJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backJButtonActionPerformed(evt);
             }
         });
-        add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, 20));
+        add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, 60, 20));
 
-        jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        jLabel2.setText("Name");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(342, 434, -1, -1));
-        add(nameJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(539, 433, 126, -1));
-
-        organizationEmpJComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        add(organizationEmpJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(539, 367, 81, -1));
-
-        jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        jLabel3.setText("Organization");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 370, -1, -1));
-
-        jLabel4.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/Multiservices.jpg"))); // NOI18N
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1800, 1800));
+        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setText("ADD EMPLOYEE");
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 10, 150, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void addJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addJButtonActionPerformed
@@ -187,7 +205,7 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_organizationJComboBoxActionPerformed
 
     private void backJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButtonActionPerformed
-
+        // TODO add your handling code here:
         userProcessContainer.remove(this);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.previous(userProcessContainer);
@@ -201,6 +219,7 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField nameJTextField;
     private javax.swing.JComboBox organizationEmpJComboBox;
