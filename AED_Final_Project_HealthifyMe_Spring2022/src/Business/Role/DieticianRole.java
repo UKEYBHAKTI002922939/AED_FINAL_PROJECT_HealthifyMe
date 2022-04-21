@@ -9,7 +9,7 @@ import Business.Network.Network;
 import Business.Organization.DieticianOrganization;
 import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
-import UI.DieticianRole.DieticianWorkAreaJPanel;
+import UI.RoleDietician.WorkAreaDieticianJPanel;
 import javax.swing.JPanel;
 /**
  *
@@ -20,7 +20,7 @@ public class DieticianRole extends Role  {
 
     @Override
     public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business, Network network) {  
-    return new DieticianWorkAreaJPanel(userProcessContainer, account, (DieticianOrganization)organization, enterprise, business, network);
+    return new WorkAreaDieticianJPanel(userProcessContainer, account, (DieticianOrganization)organization, enterprise, business, network);
     }
     
 }

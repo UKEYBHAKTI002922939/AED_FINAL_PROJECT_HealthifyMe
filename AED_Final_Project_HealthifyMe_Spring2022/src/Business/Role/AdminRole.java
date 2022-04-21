@@ -9,7 +9,7 @@ import Business.Enterprise.Enterprise;
 import Business.Network.Network;
 import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
-import UI.AdministrativeRole.AdminWorkAreaJPanel;  
+import UI.RoleAdministrative.AdminWorkAreaJPanel;  
 import javax.swing.JPanel;
 /**
  *
