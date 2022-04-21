@@ -10,7 +10,7 @@ import Business.Organization.DoctorOrganization;
 import Business.Organization.Organization;
 import Business.Organization.YogaOrganization;
 import Business.UserAccount.UserAccount;
-import UI.RoleYogaInstructor.VehicleRepairWorkAreaJPanel;
+import UI.RoleYogaInstructor.WorkAreaYogaInstructorJPanel;
 //import UserInterface.DoctorRole.DoctorWorkAreaJPanel;
 import javax.swing.JPanel;
 
@@ -22,6 +22,6 @@ public class YogaInstructor extends Role {
 
     @Override
     public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business, Network network) {  
-    return new VehicleRepairWorkAreaJPanel(userProcessContainer, account, (YogaOrganization)organization, enterprise, business, network);    
+    return new WorkAreaYogaInstructorJPanel(userProcessContainer, account, (YogaOrganization)organization, enterprise, business, network);    
     }
 }
