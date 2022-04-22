@@ -33,6 +33,7 @@ public class WorkAreaDieticianJPanel extends javax.swing.JPanel {
         assignJButton = new javax.swing.JButton();
         processJButton = new javax.swing.JButton();
         declineJButton = new javax.swing.JButton();
+        image = new javax.swing.JLabel();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -43,7 +44,8 @@ public class WorkAreaDieticianJPanel extends javax.swing.JPanel {
         value.setText("<value>");
         add(value, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 40, -1, -1));
 
-        workRequestJTable.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 4, true));
+        workRequestJTable.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 7, true));
+        workRequestJTable.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         workRequestJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -59,26 +61,33 @@ public class WorkAreaDieticianJPanel extends javax.swing.JPanel {
         assignJButton.setBackground(new java.awt.Color(255, 255, 255));
         assignJButton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         assignJButton.setText("Assign Request");
+        assignJButton.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 204, 204), 5, true));
         assignJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 assignJButtonActionPerformed(evt);
             }
         });
-        add(assignJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 390, -1, -1));
+        add(assignJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 361, -1, 50));
 
         processJButton.setBackground(new java.awt.Color(255, 255, 255));
         processJButton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         processJButton.setText("Process Request");
+        processJButton.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 204, 204), 5, true));
         processJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 processJButtonActionPerformed(evt);
             }
         });
-        add(processJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 390, -1, -1));
+        add(processJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 361, -1, 50));
 
+        declineJButton.setBackground(new java.awt.Color(255, 255, 255));
         declineJButton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         declineJButton.setText("Decline Request");
-        add(declineJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 390, -1, -1));
+        declineJButton.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 204, 204), 5, true));
+        add(declineJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 361, -1, 50));
+
+        image.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UI/RoleDietician/dietician (2).jpg"))); // NOI18N
+        add(image, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1210, 520));
     }// </editor-fold>//GEN-END:initComponents
 
     private void processJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_processJButtonActionPerformed
@@ -93,6 +102,7 @@ public class WorkAreaDieticianJPanel extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton assignJButton;
     private javax.swing.JButton declineJButton;
+    private javax.swing.JLabel image;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel organization;
     private javax.swing.JButton processJButton;
