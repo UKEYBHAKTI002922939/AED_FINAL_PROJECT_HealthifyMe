@@ -21,12 +21,12 @@ import javax.swing.JPanel;
 
 /**
  *
- * @author Pushkar Dandekar
+ * @author Simran
  */
-public class RequestVehicleRepairJPanel extends javax.swing.JPanel {
+public class RequestYogaInstructorJPanel extends javax.swing.JPanel {
 
     /**
-     * Creates new form RequestVehicleRepairJPanel
+     * Creates new form RequestYogaInstructorJPanel
      */
     
     private JPanel userProcessContainer;
@@ -37,7 +37,7 @@ public class RequestVehicleRepairJPanel extends javax.swing.JPanel {
     private Network targetNetwork;
     
     
-    public RequestVehicleRepairJPanel(JPanel userProcessContainer, UserAccount account, Enterprise enterprise, EcoSystem system, Network sourceNetwork, Network targetNetwork) {
+    public RequestYogaInstructorJPanel(JPanel userProcessContainer, UserAccount account, Enterprise enterprise, EcoSystem system, Network sourceNetwork, Network targetNetwork) {
         initComponents();
         
         this.userProcessContainer = userProcessContainer;
@@ -73,22 +73,22 @@ public class RequestVehicleRepairJPanel extends javax.swing.JPanel {
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         enterpriseLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        enterpriseLabel.setText("Enterprise:");
-        add(enterpriseLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(204, 89, -1, 30));
+        enterpriseLabel.setText("ENTERPRISE");
+        add(enterpriseLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 80, -1, 30));
 
         valueLabel.setText("<value>");
-        add(valueLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(312, 91, 110, 30));
+        add(valueLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 80, 110, 30));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel1.setText("Message");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(225, 161, -1, -1));
+        jLabel1.setText("MESSAGE");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 160, -1, -1));
 
         messageJTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 messageJTextFieldActionPerformed(evt);
             }
         });
-        add(messageJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(312, 163, 89, -1));
+        add(messageJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 160, 89, -1));
 
         backJButton.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         backJButton.setText("<<Back");
@@ -100,13 +100,13 @@ public class RequestVehicleRepairJPanel extends javax.swing.JPanel {
         add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 111, -1));
 
         requestTestJButton.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        requestTestJButton.setText("Request Task");
+        requestTestJButton.setText("REQUEST TASK");
         requestTestJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 requestTestJButtonActionPerformed(evt);
             }
         });
-        add(requestTestJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(225, 239, -1, -1));
+        add(requestTestJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 230, -1, -1));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/vehicle_repair.jpg"))); // NOI18N
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1800, 1800));

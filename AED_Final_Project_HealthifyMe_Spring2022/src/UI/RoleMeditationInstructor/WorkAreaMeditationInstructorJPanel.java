@@ -57,6 +57,7 @@ public class WorkAreaMeditationInstructorJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel2 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         workRequestJTable = new javax.swing.JTable();
@@ -65,7 +66,8 @@ public class WorkAreaMeditationInstructorJPanel extends javax.swing.JPanel {
         valueLabel = new javax.swing.JLabel();
         organizationLabel = new javax.swing.JLabel();
         processJButton = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/house_cleaning.png"))); // NOI18N
 
         setPreferredSize(new java.awt.Dimension(1800, 1800));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -102,44 +104,41 @@ public class WorkAreaMeditationInstructorJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(workRequestJTable);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 120, 680, 120));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 130, 680, 120));
 
-        declineJButton.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
-        declineJButton.setText("Decline");
+        declineJButton.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        declineJButton.setText("DECLINE");
         declineJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 declineJButtonActionPerformed(evt);
             }
         });
-        jPanel1.add(declineJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 390, 180, 40));
+        jPanel1.add(declineJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 370, 180, 40));
 
-        assignJButton.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
-        assignJButton.setText("Assign to me");
+        assignJButton.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        assignJButton.setText("ASSIGN TO ME");
         assignJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 assignJButtonActionPerformed(evt);
             }
         });
-        jPanel1.add(assignJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 390, 180, 40));
+        jPanel1.add(assignJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 370, 220, 40));
 
         valueLabel.setText("<value>");
-        jPanel1.add(valueLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 30, 158, 26));
+        jPanel1.add(valueLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 30, 158, 26));
 
-        organizationLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        organizationLabel.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         organizationLabel.setText("ORGANIZATION");
-        jPanel1.add(organizationLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 30, 180, 30));
+        jPanel1.add(organizationLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 30, 230, 30));
 
-        processJButton.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
-        processJButton.setText("Process");
+        processJButton.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        processJButton.setText("PROCESS");
         processJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 processJButtonActionPerformed(evt);
             }
         });
-        jPanel1.add(processJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 390, 190, 40));
-
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/house_cleaning.png"))); // NOI18N
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1800, 1800));
+        jPanel1.add(processJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 370, 190, 40));
 
         add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1800, 1800));
     }// </editor-fold>//GEN-END:initComponents

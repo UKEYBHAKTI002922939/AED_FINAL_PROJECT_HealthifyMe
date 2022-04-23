@@ -20,7 +20,7 @@ import javax.swing.JPanel;
 
 /**
  *
- * @author Shantanu Zodey
+ * @author Simran
  */
 public class RequestMeditationInstructorJPanel extends javax.swing.JPanel {
 
@@ -103,8 +103,10 @@ public class RequestMeditationInstructorJPanel extends javax.swing.JPanel {
                 requestTestJButtonActionPerformed(evt);
             }
         });
-        add(requestTestJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 290, -1, -1));
-        add(image, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 90, 110, 60));
+        add(requestTestJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 290, 350, 30));
+
+        image.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/meditation1.png"))); // NOI18N
+        add(image, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -40, 1490, 910));
     }// </editor-fold>//GEN-END:initComponents
 
     private void messageJTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_messageJTextFieldActionPerformed

@@ -19,12 +19,12 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author Pushkar Dandekar
+ * @author Simran
  */
-public class VehicleRepairWorkAreaJPanel extends javax.swing.JPanel {
+public class WorkAreaYogaInstructorJPanel extends javax.swing.JPanel {
 
     /**
-     * Creates new form VehicleRepairWorkAreaJPanel
+     * Creates new form WorkAreaYogaInstructorJPanel
      */
     
      private JPanel userProcessContainer;
@@ -36,7 +36,7 @@ public class VehicleRepairWorkAreaJPanel extends javax.swing.JPanel {
     private Network targetNetwork; 
    
     
-    public VehicleRepairWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem system, Network sourceNetwork) {
+    public WorkAreaYogaInstructorJPanel(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem system, Network sourceNetwork) {
         initComponents();
         
         this.userProcessContainer = userProcessContainer;
@@ -120,7 +120,7 @@ public class VehicleRepairWorkAreaJPanel extends javax.swing.JPanel {
         jScrollPane1.setViewportView(workRequestJTable);
 
         jPanel1.add(jScrollPane1);
-        jScrollPane1.setBounds(130, 60, 680, 110);
+        jScrollPane1.setBounds(210, 150, 680, 110);
 
         declineJButton.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         declineJButton.setText("Decline");
@@ -130,7 +130,7 @@ public class VehicleRepairWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
         jPanel1.add(declineJButton);
-        declineJButton.setBounds(620, 230, 180, 40);
+        declineJButton.setBounds(760, 380, 170, 35);
 
         assignJButton.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         assignJButton.setText("Assign to me");
@@ -140,16 +140,16 @@ public class VehicleRepairWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
         jPanel1.add(assignJButton);
-        assignJButton.setBounds(140, 230, 180, 40);
+        assignJButton.setBounds(160, 380, 180, 40);
 
         valueLabel.setText("<value>");
         jPanel1.add(valueLabel);
-        valueLabel.setBounds(140, 20, 158, 26);
+        valueLabel.setBounds(640, 50, 158, 26);
 
         organizationLabel.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        organizationLabel.setText("Organization");
+        organizationLabel.setText("ORGANIZATION");
         jPanel1.add(organizationLabel);
-        organizationLabel.setBounds(20, 20, 127, 30);
+        organizationLabel.setBounds(460, 50, 170, 30);
 
         processJButton.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         processJButton.setText("Process");
@@ -159,7 +159,7 @@ public class VehicleRepairWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
         jPanel1.add(processJButton);
-        processJButton.setBounds(370, 230, 190, 35);
+        processJButton.setBounds(440, 380, 190, 35);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/vehicle_repair.jpg"))); // NOI18N
         jPanel1.add(jLabel1);
