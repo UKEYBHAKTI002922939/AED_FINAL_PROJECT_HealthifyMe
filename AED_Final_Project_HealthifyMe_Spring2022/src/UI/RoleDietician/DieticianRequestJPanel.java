@@ -54,17 +54,28 @@ public class DieticianRequestJPanel extends javax.swing.JPanel {
         RequestTaskButton.setFont(new java.awt.Font("Sitka Heading", 1, 24)); // NOI18N
         RequestTaskButton.setText("Request Task");
         RequestTaskButton.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 204, 204), 5, true));
-        jPanel1.add(RequestTaskButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 250, 190, 40));
+        jPanel1.add(RequestTaskButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 250, 160, 30));
 
-        back.setFont(new java.awt.Font("Sitka Heading", 1, 12)); // NOI18N
+        back.setBackground(new java.awt.Color(255, 255, 255));
+        back.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         back.setText("Back");
-        jPanel1.add(back, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, -1, -1));
+        back.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        back.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backActionPerformed(evt);
+            }
+        });
+        jPanel1.add(back, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 50, 30));
 
         add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, 570, 320));
 
         image.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UI/RoleDietician/dietician (2).jpg"))); // NOI18N
         add(image, new org.netbeans.lib.awtextra.AbsoluteConstraints(-3, 6, 1190, 530));
     }// </editor-fold>//GEN-END:initComponents
+
+    private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_backActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
