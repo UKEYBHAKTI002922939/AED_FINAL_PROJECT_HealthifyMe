@@ -13,7 +13,7 @@ import java.util.ArrayList;
  * @author anky
  */
 
-public class MentalHealthEnterprise {
+public class MentalHealthEnterprise extends Enterprise{
      public MentalHealthEnterprise(String name){
         super(name,Enterprise.EnterpriseType.MentalHealthEnt);
     }
