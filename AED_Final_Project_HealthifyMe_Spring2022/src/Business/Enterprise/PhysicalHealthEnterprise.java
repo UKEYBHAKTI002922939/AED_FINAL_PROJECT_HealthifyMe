@@ -7,20 +7,17 @@ package Business.Enterprise;
 import Business.Role.Role;
 import java.util.ArrayList;
 
-
 /**
  *
- * @author anky
+ * @author agarw
  */
-
-public class MentalHealthEnterprise extends Enterprise{
-     public MentalHealthEnterprise(String name){
-        super(name,Enterprise.EnterpriseType.MentalHealthEnt);
+public class PhysicalHealthEnterprise extends Enterprise {
+    public PhysicalHealthEnterprise(String name){
+        super(name,Enterprise.EnterpriseType.PhysicalHealthEnt);
     }
 
     @Override
     public ArrayList<Role> getSupportedRole() {
         return null;
     }
-    
 }
