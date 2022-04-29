@@ -4,10 +4,14 @@
  */
 package Business.Enterprise;
 
+
 /**
  *
  * @author Simran
  */
+import Business.Organization.Organization;
+import Business.Organization.OrganizationDirectory;
+
 public abstract class Enterprise extends Organization{
     private EnterpriseType enterpriseType;
     private OrganizationDirectory organizationDirectory;
@@ -49,3 +53,4 @@ public abstract class Enterprise extends Organization{
     }
     
 }
+

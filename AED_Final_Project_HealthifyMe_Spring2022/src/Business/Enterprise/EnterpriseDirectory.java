@@ -21,8 +21,7 @@ public class EnterpriseDirectory {
     public void setEnterpriseList(ArrayList<Enterprise> enterpriseList) {
         this.enterpriseList = enterpriseList;
     }
-    
-    public EnterpriseDirectory(){
+        public EnterpriseDirectory(){
         enterpriseList=new ArrayList<Enterprise>();
     }
     

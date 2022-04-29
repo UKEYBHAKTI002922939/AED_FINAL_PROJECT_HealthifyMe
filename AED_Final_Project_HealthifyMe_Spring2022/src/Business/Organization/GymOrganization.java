@@ -5,24 +5,23 @@
 package Business.Organization;
 
 import Business.Role.AdminRole;
-import Business.Role.CustomerRole;
+import Business.Role.GymInstructor;
 import Business.Role.Role;
 import java.util.ArrayList;
 
 /**
  *
- * @author anky
+ * @author agarw
  */
-public class CustomerOrganization extends Organization{
-    public CustomerOrganization() {
-        super(Organization.Type.Customer.getValue());
+public class GymOrganization extends Organization {
+    public GymOrganization() {
+        super(Organization.Type.Gym.getValue());
     }
     
     @Override
     public ArrayList<Role> getSupportedRole() {
         ArrayList<Role> roles = new ArrayList();
-        roles.add(new CustomerRole());
+        roles.add(new GymInstructor());
         return roles;
     }
-    
 }

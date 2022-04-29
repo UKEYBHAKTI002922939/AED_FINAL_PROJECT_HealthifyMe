@@ -2,25 +2,25 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package Business.Enterprise;
+package Business.Organization;
 
+import Business.Role.DoctorRole;
 import Business.Role.Role;
 import java.util.ArrayList;
 
-
 /**
  *
- * @author anky
+ * @author agarw
  */
-
-public class MentalHealthEnterprise extends Enterprise{
-     public MentalHealthEnterprise(String name){
-        super(name,Enterprise.EnterpriseType.MentalHealthEnt);
-    }
-
-    @Override
-    public ArrayList<Role> getSupportedRole() {
-        return null;
+public class DoctorOrganization extends Organization {
+    public DoctorOrganization() {
+        super(Organization.Type.Doctor.getValue());
     }
     
+    @Override
+    public ArrayList<Role> getSupportedRole() {
+        ArrayList<Role> roles = new ArrayList();
+        roles.add(new DoctorRole());
+        return roles;
+    }
 }

@@ -4,6 +4,8 @@
  */
 package Business.Employee;
 
+import Business.Role.Role; 
+
 /**
  *
  * @author Simran
