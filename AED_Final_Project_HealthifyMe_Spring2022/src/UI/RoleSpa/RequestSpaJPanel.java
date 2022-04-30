@@ -2,18 +2,18 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-package UI.RoleSalon;
+package UI.RoleSpa;
 
 /**
  *
  * @author anky
  */
-public class RequestSalonJPanel extends javax.swing.JPanel {
+public class RequestSpaJPanel extends javax.swing.JPanel {
 
     /**
-     * Creates new form RequestSalonJPanel
+     * Creates new form RequestSpaJPanel
      */
-    public RequestSalonJPanel() {
+    public RequestSpaJPanel() {
         initComponents();
     }
 
@@ -34,7 +34,6 @@ public class RequestSalonJPanel extends javax.swing.JPanel {
         RequetsjButton = new javax.swing.JButton();
         image = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         backJButton.setBackground(new java.awt.Color(163, 206, 215));
@@ -44,27 +43,25 @@ public class RequestSalonJPanel extends javax.swing.JPanel {
         add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 60, 30));
 
         enterprice.setFont(new java.awt.Font("Sitka Display", 1, 18)); // NOI18N
-        enterprice.setForeground(new java.awt.Color(163, 206, 215));
         enterprice.setText("Enterprise: ");
-        add(enterprice, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 110, -1, -1));
+        add(enterprice, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 100, -1, -1));
 
-        valuejLabel.setForeground(new java.awt.Color(163, 206, 215));
         valuejLabel.setText("<value>");
-        add(valuejLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 110, 50, -1));
+        add(valuejLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 100, 50, -1));
 
         messagejLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         messagejLabel.setText("Message");
-        add(messagejLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 240, -1, -1));
-        add(messagejTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 240, 190, -1));
+        add(messagejLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 210, -1, -1));
+        add(messagejTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 210, 190, -1));
 
         RequetsjButton.setBackground(new java.awt.Color(163, 206, 215));
         RequetsjButton.setFont(new java.awt.Font("Sitka Display", 1, 18)); // NOI18N
         RequetsjButton.setText("Request Appointment");
         RequetsjButton.setBorder(null);
-        add(RequetsjButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 350, 190, 30));
+        add(RequetsjButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 320, 190, 30));
 
-        image.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/salon_workarea.jpg"))); // NOI18N
-        add(image, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 810, 500));
+        image.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/spa_img.jpg"))); // NOI18N
+        add(image, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 630, 460));
     }// </editor-fold>//GEN-END:initComponents
 
 

@@ -2,18 +2,18 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-package UI.RoleSalon;
+package UI.RoleSpa;
 
 /**
  *
  * @author anky
  */
-public class WorkAreaSalonJPanel extends javax.swing.JPanel {
+public class WorkAreaSpaJPanel extends javax.swing.JPanel {
 
     /**
-     * Creates new form WorkAreaSalonJPanel
+     * Creates new form WorkAreaSpaJPanel
      */
-    public WorkAreaSalonJPanel() {
+    public WorkAreaSpaJPanel() {
         initComponents();
     }
 
@@ -33,9 +33,8 @@ public class WorkAreaSalonJPanel extends javax.swing.JPanel {
         assignjButton = new javax.swing.JButton();
         processjButton = new javax.swing.JButton();
         declinejButton = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        image = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         organizationjLabel.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -80,8 +79,8 @@ public class WorkAreaSalonJPanel extends javax.swing.JPanel {
         declinejButton.setBorder(null);
         add(declinejButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 350, 94, 30));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/salon_workarea.jpg"))); // NOI18N
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 640, 460));
+        image.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/spa_img.jpg"))); // NOI18N
+        add(image, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 640, 490));
     }// </editor-fold>//GEN-END:initComponents
 
     private void assignjButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_assignjButtonActionPerformed
@@ -92,7 +91,7 @@ public class WorkAreaSalonJPanel extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton assignjButton;
     private javax.swing.JButton declinejButton;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel image;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel organizationjLabel;
     private javax.swing.JButton processjButton;
