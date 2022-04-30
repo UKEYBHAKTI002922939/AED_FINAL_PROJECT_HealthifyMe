@@ -33,56 +33,70 @@ public class DieticianRequestJPanel extends javax.swing.JPanel {
         message = new javax.swing.JTextField();
         RequestTaskButton = new javax.swing.JButton();
         back = new javax.swing.JButton();
-        image = new javax.swing.JLabel();
+        imagelabel = new javax.swing.JLabel();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBackground(new java.awt.Color(231, 200, 237));
+        jPanel1.setForeground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         enterprise.setFont(new java.awt.Font("Sitka Display", 1, 24)); // NOI18N
+        enterprise.setForeground(new java.awt.Color(255, 255, 255));
         enterprise.setText("Enterprise :");
         jPanel1.add(enterprise, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 50, -1, -1));
         jPanel1.add(value, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 50, 90, 30));
 
         jLabel1.setFont(new java.awt.Font("Sitka Heading", 1, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Message  ");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 150, -1, -1));
         jPanel1.add(message, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 150, 180, -1));
 
-        RequestTaskButton.setBackground(new java.awt.Color(255, 255, 255));
+        RequestTaskButton.setBackground(new java.awt.Color(255, 204, 153));
         RequestTaskButton.setFont(new java.awt.Font("Sitka Heading", 1, 24)); // NOI18N
+        RequestTaskButton.setForeground(new java.awt.Color(255, 255, 255));
         RequestTaskButton.setText("Request Task");
-        RequestTaskButton.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 204, 204), 5, true));
-        jPanel1.add(RequestTaskButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 250, 160, 30));
+        RequestTaskButton.setBorderPainted(false);
+        RequestTaskButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RequestTaskButtonActionPerformed(evt);
+            }
+        });
+        jPanel1.add(RequestTaskButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 250, 180, 30));
 
-        back.setBackground(new java.awt.Color(255, 255, 255));
+        back.setBackground(new java.awt.Color(255, 204, 153));
         back.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        back.setForeground(new java.awt.Color(255, 255, 255));
         back.setText("Back");
-        back.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        back.setBorder(null);
         back.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backActionPerformed(evt);
             }
         });
-        jPanel1.add(back, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 50, 30));
+        jPanel1.add(back, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 80, 30));
 
-        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, 570, 320));
+        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 80, 570, 320));
 
-        image.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UI/RoleDietician/dietician (2).jpg"))); // NOI18N
-        add(image, new org.netbeans.lib.awtextra.AbsoluteConstraints(-3, 6, 1190, 530));
+        imagelabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/dietimage.jpg"))); // NOI18N
+        add(imagelabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1210, 540));
     }// </editor-fold>//GEN-END:initComponents
 
     private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_backActionPerformed
 
+    private void RequestTaskButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RequestTaskButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_RequestTaskButtonActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton RequestTaskButton;
     private javax.swing.JButton back;
     private javax.swing.JLabel enterprise;
-    private javax.swing.JLabel image;
+    private javax.swing.JLabel imagelabel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField message;
