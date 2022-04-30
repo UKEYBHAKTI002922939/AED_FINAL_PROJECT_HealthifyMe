@@ -4,6 +4,19 @@
  */
 package UI.RoleSpa;
 
+import Business.EcoSystem;
+import Business.Enterprise.Enterprise;
+import Business.Network.Network;
+import Business.Organization.DoctorOrganization;
+import Business.Organization.Organization;
+import Business.Organization.SpaOrganization;
+import Business.UserAccount.UserAccount;
+import Business.WorkQueue.SpaWorkRequest;
+import Business.WorkQueue.WorkRequest;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author anky
@@ -13,8 +26,24 @@ public class WorkAreaSpaJPanel extends javax.swing.JPanel {
     /**
      * Creates new form WorkAreaSpaJPanel
      */
-    public WorkAreaSpaJPanel() {
+    private JPanel userProcessContainer;
+    private SpaOrganization spaorganization;
+    private Enterprise enterprise;
+    private UserAccount userAccount;
+    private EcoSystem system;
+    private Network sourceNetwork;
+    private Network targetNetwork;
+    
+    public WorkAreaSpaJPanel(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem system, Network sourceNetwork) {
         initComponents();
+        this.userProcessContainer = userProcessContainer;
+        this.spaorganization = (SpaOrganization) organization;
+        this.enterprise = enterprise;
+        this.userAccount = account;
+        this.system = system;
+        this.sourceNetwork = sourceNetwork;
+        valueLabel.setText(organization.getName());
+        populateRequestTable();
     }
 
     /**
@@ -27,9 +56,9 @@ public class WorkAreaSpaJPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         organizationjLabel = new javax.swing.JLabel();
-        valuejLabel = new javax.swing.JLabel();
+        valueLabel = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        workRequestjTable = new javax.swing.JTable();
+        workRequestJTable = new javax.swing.JTable();
         assignjButton = new javax.swing.JButton();
         processjButton = new javax.swing.JButton();
         declinejButton = new javax.swing.JButton();
@@ -41,10 +70,10 @@ public class WorkAreaSpaJPanel extends javax.swing.JPanel {
         organizationjLabel.setText("Organization");
         add(organizationjLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, -1, -1));
 
-        valuejLabel.setText("<value>");
-        add(valuejLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 30, -1, -1));
+        valueLabel.setText("<value>");
+        add(valueLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 30, -1, -1));
 
-        workRequestjTable.setModel(new javax.swing.table.DefaultTableModel(
+        workRequestJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -52,7 +81,7 @@ public class WorkAreaSpaJPanel extends javax.swing.JPanel {
                 "Message", "Sender", "Reciever", "Status"
             }
         ));
-        jScrollPane1.setViewportView(workRequestjTable);
+        jScrollPane1.setViewportView(workRequestJTable);
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 150, -1, 138));
 
@@ -71,22 +100,89 @@ public class WorkAreaSpaJPanel extends javax.swing.JPanel {
         processjButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         processjButton.setText("Process");
         processjButton.setBorder(null);
+        processjButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                processjButtonActionPerformed(evt);
+            }
+        });
         add(processjButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(229, 350, 110, 30));
 
         declinejButton.setBackground(new java.awt.Color(163, 206, 215));
         declinejButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         declinejButton.setText("Decline");
         declinejButton.setBorder(null);
+        declinejButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                declinejButtonActionPerformed(evt);
+            }
+        });
         add(declinejButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 350, 94, 30));
 
         image.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/spa_img.jpg"))); // NOI18N
-        add(image, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 640, 490));
+        add(image, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 820, 490));
     }// </editor-fold>//GEN-END:initComponents
 
     private void assignjButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_assignjButtonActionPerformed
         // TODO add your handling code here:
+         int selectedRow = workRequestJTable.getSelectedRow();
+
+        if (selectedRow < 0){
+            JOptionPane.showMessageDialog(this, "Please select at least one row");
+            return;
+        }
+
+        WorkRequest request = (WorkRequest)workRequestJTable.getValueAt(selectedRow, 0);
+        request.setReceiver(userAccount);
+        request.setStatus("Confirmed");
+
+        populateRequestTable();
     }//GEN-LAST:event_assignjButtonActionPerformed
 
+    private void declinejButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_declinejButtonActionPerformed
+        // TODO add your handling code here:
+        int selectedRow = workRequestJTable.getSelectedRow();
+
+        if (selectedRow < 0){
+            JOptionPane.showMessageDialog(this, "Please select at least one row");
+            return;
+        }
+
+        WorkRequest request = (WorkRequest)workRequestJTable.getValueAt(selectedRow, 0);
+        request.setReceiver(userAccount);
+        request.setStatus("Declined");
+
+        populateRequestTable();
+    }//GEN-LAST:event_declinejButtonActionPerformed
+
+    private void processjButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_processjButtonActionPerformed
+        // TODO add your handling code here:
+         int selectedRow = workRequestJTable.getSelectedRow();
+
+        if (selectedRow < 0){
+            JOptionPane.showMessageDialog(this, "Please select at least one row");
+            return;
+        }
+
+        WorkRequest request = (WorkRequest)workRequestJTable.getValueAt(selectedRow,0);
+        request.setReceiver(userAccount);
+        request.setStatus("Processed");
+        populateRequestTable();
+    }//GEN-LAST:event_processjButtonActionPerformed
+    public void populateRequestTable(){
+        DefaultTableModel model = (DefaultTableModel) workRequestJTable.getModel();
+        
+        model.setRowCount(0);
+        for (WorkRequest request : spaorganization.getWorkQueue().getWorkRequestList()){
+            if(request instanceof SpaWorkRequest){
+            Object[] row = new Object[4];
+            row[0] = request;
+            row[1] = request.getSender().getEmployee().getName();
+            row[2] = request.getReceiver() == null ? null : request.getReceiver().getEmployee().getName();
+            row[3] = request.getStatus();
+            model.addRow(row);
+            }
+        }
+}
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton assignjButton;
@@ -95,7 +191,7 @@ public class WorkAreaSpaJPanel extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel organizationjLabel;
     private javax.swing.JButton processjButton;
-    private javax.swing.JLabel valuejLabel;
-    private javax.swing.JTable workRequestjTable;
+    private javax.swing.JLabel valueLabel;
+    private javax.swing.JTable workRequestJTable;
     // End of variables declaration//GEN-END:variables
 }
