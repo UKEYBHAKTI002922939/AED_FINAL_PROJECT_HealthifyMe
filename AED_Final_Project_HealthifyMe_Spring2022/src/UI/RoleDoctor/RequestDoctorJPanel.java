@@ -3,6 +3,19 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
 package UI.RoleDoctor;
+import Business.EcoSystem;
+import Business.Enterprise.Enterprise;
+import Business.Enterprise.HealthCareEnterprise;
+import Business.Network.Network;
+import Business.Organization.DoctorOrganization;
+import Business.Organization.Organization;
+import Business.UserAccount.UserAccount;
+import Business.WorkQueue.DoctorWorkRequest;
+import UI.Customer.CustomerLoginWorkAreaJPanel;
+import java.awt.CardLayout;
+import java.awt.Component;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 
 /**
  *
@@ -13,8 +26,24 @@ public class RequestDoctorJPanel extends javax.swing.JPanel {
     /**
      * Creates new form RequestDoctorJPanel
      */
-    public RequestDoctorJPanel() {
+     private JPanel userProcessContainer;
+    private Enterprise enterprise;
+    private UserAccount userAccount;
+    private EcoSystem system;
+    private Network sourceNetwork;
+    private Network targetNetwork;
+    
+    public RequestDoctorJPanel(JPanel userProcessContainer, UserAccount account, Enterprise enterprise, EcoSystem system, Network sourceNetwork, Network targetNetwork) {
         initComponents();
+        this.userProcessContainer = userProcessContainer;
+        this.enterprise = enterprise;
+        this.userAccount = account;
+        this.system = system;
+        this.sourceNetwork = sourceNetwork;
+        this.targetNetwork = targetNetwork;
+        if(null != enterprise) {
+            valueLabel.setText(enterprise.getName());
+        }
     }
 
     /**
@@ -28,47 +57,119 @@ public class RequestDoctorJPanel extends javax.swing.JPanel {
 
         backJButton = new javax.swing.JButton();
         enterprice = new javax.swing.JLabel();
-        valuejLabel = new javax.swing.JLabel();
+        valueLabel = new javax.swing.JLabel();
         messagejLabel = new javax.swing.JLabel();
-        messagejTextField = new javax.swing.JTextField();
-        RequetsjButton = new javax.swing.JButton();
+        messageJTextField = new javax.swing.JTextField();
+        RequestjButton = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        backJButton.setBackground(new java.awt.Color(194, 217, 231));
+        backJButton.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         backJButton.setText("Back");
-        add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+        backJButton.setBorder(null);
+        backJButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backJButtonActionPerformed(evt);
+            }
+        });
+        add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 60, 20));
 
         enterprice.setFont(new java.awt.Font("Sitka Display", 1, 18)); // NOI18N
         enterprice.setText("Enterprise: ");
         add(enterprice, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 90, -1, -1));
 
-        valuejLabel.setText("<value>");
-        add(valuejLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 90, 50, -1));
+        valueLabel.setText("<value>");
+        add(valueLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 90, 50, -1));
 
         messagejLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         messagejLabel.setText("Message");
         add(messagejLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 200, -1, -1));
-        add(messagejTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 200, 130, -1));
+        add(messageJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 200, 130, -1));
 
-        RequetsjButton.setBackground(new java.awt.Color(255, 255, 255));
-        RequetsjButton.setFont(new java.awt.Font("Sitka Display", 1, 18)); // NOI18N
-        RequetsjButton.setText("Request Appointment");
-        RequetsjButton.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 5, true));
-        add(RequetsjButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 350, 220, 50));
+        RequestjButton.setBackground(new java.awt.Color(194, 217, 231));
+        RequestjButton.setFont(new java.awt.Font("Sitka Display", 1, 18)); // NOI18N
+        RequestjButton.setText("Request Appointment");
+        RequestjButton.setBorder(null);
+        RequestjButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RequestjButtonActionPerformed(evt);
+            }
+        });
+        add(RequestjButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 350, 180, 30));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UI/RoleDoctor/doc.jpg"))); // NOI18N
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 660, 460));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/doc.jpg"))); // NOI18N
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 650, 440));
     }// </editor-fold>//GEN-END:initComponents
+
+    private void RequestjButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RequestjButtonActionPerformed
+        // TODO add your handling code here:
+         String message = messageJTextField.getText();
+        if (!message.isEmpty()) {
+            DoctorWorkRequest request = new DoctorWorkRequest();
+            request.setMessage(message);
+            request.setSender(userAccount);
+            request.setStatus("Sent");
+
+            Organization org = null;
+            Enterprise ent = null;
+            if (sourceNetwork != targetNetwork) {
+                for (Enterprise enterprise : targetNetwork.getEnterpriseDirectory().getEnterpriseList()) {
+                    if (enterprise instanceof HealthCareEnterprise) {
+                        ent = enterprise;
+                    }
+                    for (Organization organization : enterprise.getOrganizationDirectory().getOrganizationList()) {
+                        if (organization instanceof DoctorOrganization) {
+                            org = organization;
+                            break;
+                        }
+                    }
+                }
+            } else {
+                for (Enterprise enterprise : sourceNetwork.getEnterpriseDirectory().getEnterpriseList()) {
+                    if (enterprise instanceof HealthCareEnterprise) {
+                        ent = enterprise;
+                    }
+                    for (Organization organization : enterprise.getOrganizationDirectory().getOrganizationList()) {
+                        if (organization instanceof DoctorOrganization) {
+                            org = organization;
+                            break;
+                        }
+                    }
+                }
+            }
+            if (org != null) {
+                org.getWorkQueue().getWorkRequestList().add(request);
+                userAccount.getWorkQueue().getWorkRequestList().add(request);
+            }
+        } else {
+            JOptionPane.showMessageDialog(this, "Please enter correct input");
+        }
+        messageJTextField.setText("");
+
+    }//GEN-LAST:event_RequestjButtonActionPerformed
+
+    private void backJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButtonActionPerformed
+        // TODO add your handling code here:
+         userProcessContainer.remove(this);
+        Component[] componentArray = userProcessContainer.getComponents();
+        Component component = componentArray[componentArray.length - 1];
+        //DoctorWorkAreaJPanel dwjp = (DoctorWorkAreaJPanel) component;
+        CustomerLoginWorkAreaJPanel clwjp = (CustomerLoginWorkAreaJPanel) component;
+        clwjp.populateRequestTable(sourceNetwork);
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.previous(userProcessContainer);
+    }//GEN-LAST:event_backJButtonActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton RequetsjButton;
+    private javax.swing.JButton RequestjButton;
     private javax.swing.JButton backJButton;
     private javax.swing.JLabel enterprice;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JTextField messageJTextField;
     private javax.swing.JLabel messagejLabel;
-    private javax.swing.JTextField messagejTextField;
-    private javax.swing.JLabel valuejLabel;
+    private javax.swing.JLabel valueLabel;
     // End of variables declaration//GEN-END:variables
 }

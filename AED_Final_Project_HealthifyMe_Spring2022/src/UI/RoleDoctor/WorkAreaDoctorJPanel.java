@@ -4,6 +4,18 @@
  */
 package UI.RoleDoctor;
 
+import Business.EcoSystem;
+import Business.Enterprise.Enterprise;
+import Business.Network.Network;
+import Business.Organization.DoctorOrganization;
+import Business.Organization.Organization;
+import Business.UserAccount.UserAccount;
+import Business.WorkQueue.DoctorWorkRequest;
+import Business.WorkQueue.WorkRequest;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author anky
@@ -13,8 +25,24 @@ public class WorkAreaDoctorJPanel extends javax.swing.JPanel {
     /**
      * Creates new form WorkAreaDoctorJPanel
      */
-    public WorkAreaDoctorJPanel() {
+    
+    private JPanel userProcessContainer;
+    private DoctorOrganization docorganization;
+    private Enterprise enterprise;
+    private UserAccount userAccount;
+    private EcoSystem system;
+    private Network sourceNetwork;
+    private Network targetNetwork;   
+    public WorkAreaDoctorJPanel(JPanel userProcessContainer, UserAccount userAccount, Organization organization, Enterprise enterprise, EcoSystem system, Network sourceNetwork) {
         initComponents();
+        this.userProcessContainer = userProcessContainer;
+        this.docorganization = (DoctorOrganization) organization;
+        this.enterprise = enterprise;
+        this.userAccount = userAccount;
+        this.system = system;
+        this.sourceNetwork = sourceNetwork;
+        valueLabel.setText(organization.getName());
+        populateRequestTable();    
     }
 
     /**
@@ -27,9 +55,9 @@ public class WorkAreaDoctorJPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         organizationjLabel = new javax.swing.JLabel();
-        valuejLabel = new javax.swing.JLabel();
+        valueLabel = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        wokRequestjTable = new javax.swing.JTable();
+        workRequestJTable = new javax.swing.JTable();
         assignJButton = new javax.swing.JButton();
         processJButton = new javax.swing.JButton();
         declineJButton = new javax.swing.JButton();
@@ -41,10 +69,10 @@ public class WorkAreaDoctorJPanel extends javax.swing.JPanel {
         organizationjLabel.setText("Organization");
         add(organizationjLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 40, -1, -1));
 
-        valuejLabel.setText("<value>");
-        add(valuejLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 40, -1, -1));
+        valueLabel.setText("<value>");
+        add(valueLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 40, -1, -1));
 
-        wokRequestjTable.setModel(new javax.swing.table.DefaultTableModel(
+        workRequestJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -52,7 +80,7 @@ public class WorkAreaDoctorJPanel extends javax.swing.JPanel {
                 "Message", "Sender", "Reciever", "Status"
             }
         ));
-        jScrollPane1.setViewportView(wokRequestjTable);
+        jScrollPane1.setViewportView(workRequestJTable);
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 150, 470, 138));
 
@@ -95,16 +123,64 @@ public class WorkAreaDoctorJPanel extends javax.swing.JPanel {
 
     private void assignJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_assignJButtonActionPerformed
         // TODO add your handling code here:
+         int selectedRow = workRequestJTable.getSelectedRow();
+
+        if (selectedRow < 0){
+            JOptionPane.showMessageDialog(this, "Please select at least one row");
+            return;
+        }
+
+        WorkRequest request = (WorkRequest)workRequestJTable.getValueAt(selectedRow,0);
+        request.setReceiver(userAccount);
+        request.setStatus("Confirmed");
+        populateRequestTable();
     }//GEN-LAST:event_assignJButtonActionPerformed
 
     private void processJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_processJButtonActionPerformed
         // TODO add your handling code here:
+        int selectedRow = workRequestJTable.getSelectedRow();
+
+        if (selectedRow < 0){
+            JOptionPane.showMessageDialog(this, "Please select at least one row");
+            return;
+        }
+
+        WorkRequest request = (WorkRequest)workRequestJTable.getValueAt(selectedRow,0);
+        request.setReceiver(userAccount);
+        request.setStatus("Processed");
+        populateRequestTable();
     }//GEN-LAST:event_processJButtonActionPerformed
 
     private void declineJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_declineJButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_declineJButtonActionPerformed
+        int selectedRow = workRequestJTable.getSelectedRow();
 
+        if (selectedRow < 0){
+            JOptionPane.showMessageDialog(this, "Please select at least one row");
+            return;
+        }
+
+        WorkRequest request = (WorkRequest)workRequestJTable.getValueAt(selectedRow, 0);
+        request.setStatus("Declined");
+        populateRequestTable();
+    }//GEN-LAST:event_declineJButtonActionPerformed
+   
+     public void populateRequestTable(){
+        DefaultTableModel model = (DefaultTableModel) workRequestJTable.getModel();
+        
+        model.setRowCount(0);
+        for (WorkRequest request : docorganization.getWorkQueue().getWorkRequestList()){
+            if(request instanceof DoctorWorkRequest){
+            Object[] row = new Object[4];
+            
+            row[0] = request;
+            row[1] = request.getSender().getEmployee().getName();
+            row[2] = request.getReceiver() == null ? null : request.getReceiver().getEmployee().getName();
+            row[3] = request.getStatus();
+            model.addRow(row);
+            }
+        }
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton assignJButton;
@@ -113,7 +189,7 @@ public class WorkAreaDoctorJPanel extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel organizationjLabel;
     private javax.swing.JButton processJButton;
-    private javax.swing.JLabel valuejLabel;
-    private javax.swing.JTable wokRequestjTable;
+    private javax.swing.JLabel valueLabel;
+    private javax.swing.JTable workRequestJTable;
     // End of variables declaration//GEN-END:variables
 }
