@@ -3,6 +3,18 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
 package UI.RoleDietician;
+import Business.EcoSystem;
+import Business.Enterprise.Enterprise;
+import Business.Network.Network;
+import Business.Organization.DieticianOrganization;
+import Business.Organization.Organization;
+import Business.UserAccount.UserAccount;
+import Business.WorkQueue.DieticianWorkRequest;
+import Business.WorkQueue.WorkRequest;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
+
 
 /**
  *
@@ -13,8 +25,23 @@ public class WorkAreaDieticianJPanel extends javax.swing.JPanel {
     /**
      * Creates new form WorkAreaDieticianJPanel
      */
-    public WorkAreaDieticianJPanel() {
+    private JPanel userProcessContainer;
+    private DieticianOrganization dieticianorganization;
+    private Enterprise enterprise;
+    private UserAccount userAccount;
+    private EcoSystem system;
+    private Network sourceNetwork;
+    private Network targetNetwork;
+    public WorkAreaDieticianJPanel(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business, Network network) {
         initComponents();
+         this.userProcessContainer = userProcessContainer;
+        this.dieticianorganization = (DieticianOrganization) organization;
+        this.enterprise = enterprise;
+        this.userAccount = account;
+        this.system = system;
+        valueLabel.setText(organization.getName());
+        this.sourceNetwork = sourceNetwork;
+        populateRequestTable();
     }
 
     /**
@@ -27,7 +54,7 @@ public class WorkAreaDieticianJPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         organization = new javax.swing.JLabel();
-        value = new javax.swing.JLabel();
+        valueLabel = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         workRequestJTable = new javax.swing.JTable();
         assignJButton = new javax.swing.JButton();
@@ -41,8 +68,8 @@ public class WorkAreaDieticianJPanel extends javax.swing.JPanel {
         organization.setText("Organization");
         add(organization, new org.netbeans.lib.awtextra.AbsoluteConstraints(127, 30, 100, 40));
 
-        value.setText("<value>");
-        add(value, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 40, -1, -1));
+        valueLabel.setText("<value>");
+        add(valueLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 40, -1, -1));
 
         workRequestJTable.setBackground(new java.awt.Color(231, 200, 237));
         workRequestJTable.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 7, true));
@@ -89,6 +116,11 @@ public class WorkAreaDieticianJPanel extends javax.swing.JPanel {
         declineJButton.setForeground(new java.awt.Color(255, 255, 255));
         declineJButton.setText("Decline Request");
         declineJButton.setBorder(null);
+        declineJButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                declineJButtonActionPerformed(evt);
+            }
+        });
         add(declineJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 360, 130, 30));
 
         imagelabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/dietimage.jpg"))); // NOI18N
@@ -97,12 +129,63 @@ public class WorkAreaDieticianJPanel extends javax.swing.JPanel {
 
     private void processJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_processJButtonActionPerformed
         // TODO add your handling code here:
+        int selectedRow = workRequestJTable.getSelectedRow();
+
+        if (selectedRow < 0){
+            JOptionPane.showMessageDialog(this, "Please select at least one row");
+            return;
+        }
+
+        WorkRequest request = (WorkRequest)workRequestJTable.getValueAt(selectedRow,0);
+        request.setReceiver(userAccount);
+        request.setStatus("Processed");
+        populateRequestTable();
     }//GEN-LAST:event_processJButtonActionPerformed
 
     private void assignJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_assignJButtonActionPerformed
         // TODO add your handling code here:
+        int selectedRow = workRequestJTable.getSelectedRow();
+
+        if (selectedRow < 0){
+            JOptionPane.showMessageDialog(this, "Please select at least one row");
+            return;
+        }
+
+        WorkRequest request = (WorkRequest)workRequestJTable.getValueAt(selectedRow, 0);
+        request.setReceiver(userAccount);
+        request.setStatus("Confirmed");
+        populateRequestTable();
     }//GEN-LAST:event_assignJButtonActionPerformed
 
+    private void declineJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_declineJButtonActionPerformed
+        // TODO add your handling code here:
+         int selectedRow = workRequestJTable.getSelectedRow();
+
+        if (selectedRow < 0){
+            JOptionPane.showMessageDialog(this, "Please select at least one row");
+            return;
+        }
+
+        WorkRequest request = (WorkRequest)workRequestJTable.getValueAt(selectedRow, 0);
+        request.setReceiver(userAccount);
+        request.setStatus("Declined");
+        populateRequestTable();
+    }//GEN-LAST:event_declineJButtonActionPerformed
+       public void populateRequestTable(){
+        DefaultTableModel model = (DefaultTableModel) workRequestJTable.getModel();
+        
+        model.setRowCount(0);
+        for (WorkRequest request : dieticianorganization.getWorkQueue().getWorkRequestList()){
+            if(request instanceof DieticianWorkRequest){
+            Object[] row = new Object[4];
+            row[0] = request;
+            row[1] = request.getSender().getEmployee().getName();
+            row[2] = request.getReceiver() == null ? null : request.getReceiver().getEmployee().getName();
+            row[3] = request.getStatus();
+            model.addRow(row);
+            }
+        }
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton assignJButton;
@@ -111,7 +194,7 @@ public class WorkAreaDieticianJPanel extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel organization;
     private javax.swing.JButton processJButton;
-    private javax.swing.JLabel value;
+    private javax.swing.JLabel valueLabel;
     private javax.swing.JTable workRequestJTable;
     // End of variables declaration//GEN-END:variables
 }
