@@ -8,6 +8,16 @@ package Business.WorkQueue;
  *
  * @author anky
  */
-public class SpaWorkRequest {
+public class SpaWorkRequest extends WorkRequest{
+    private String SpaAppointment;
+
+    public String getSpaAppointment() {
+        return SpaAppointment;
+    }
+
+    public void setSpaAppointment(String SpaAppointment) {
+        this.SpaAppointment = SpaAppointment;
+    }
     
 }
+
