@@ -10,7 +10,7 @@ import Business.Network.Network;
 import Business.Organization.MeditationOrganization;
 import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
-import UserInterface.HouseCleaningRole.HouseCleanWorkAreaJPanel;
+import UI.HouseCleaningRole.HouseCleanWorkAreaJPanel;
 import javax.swing.JPanel;
 
 /**

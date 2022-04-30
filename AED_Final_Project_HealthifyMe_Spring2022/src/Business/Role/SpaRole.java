@@ -10,7 +10,7 @@ import Business.Organization.DoctorOrganization;
 import Business.Organization.Organization;
 import Business.Organization.SpaOrganization;
 import Business.UserAccount.UserAccount;
-import UserInterface.SpaRole.SpaWorkAreaJPanel;
+import UI.SpaRole.SpaWorkAreaJPanel;
 import javax.swing.JPanel;
 
 /**
