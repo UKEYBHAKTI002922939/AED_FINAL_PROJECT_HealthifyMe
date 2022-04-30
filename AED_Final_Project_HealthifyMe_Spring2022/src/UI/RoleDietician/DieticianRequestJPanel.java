@@ -3,6 +3,19 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
 package UI.RoleDietician;
+import Business.EcoSystem;
+import Business.Enterprise.Enterprise;
+import Business.Enterprise.HealthCareEnterprise;
+import Business.Network.Network;
+import Business.Organization.DieticianOrganization;
+import Business.Organization.Organization;
+import Business.UserAccount.UserAccount;
+import Business.WorkQueue.DieticianWorkRequest;
+import UI.Customer.CustomerLoginWorkAreaJPanel;
+import java.awt.CardLayout;
+import java.awt.Component;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 
 /**
  *
@@ -13,8 +26,21 @@ public class DieticianRequestJPanel extends javax.swing.JPanel {
     /**
      * Creates new form DieticianRequestJPanel
      */
-    public DieticianRequestJPanel() {
+    private JPanel userProcessContainer;
+    private Enterprise enterprise;
+    private UserAccount userAccount;
+    private EcoSystem system;
+    private Network sourceNetwork;
+    private Network targetNetwork;
+    
+    public DieticianRequestJPanel(JPanel userProcessContainer, UserAccount account, Enterprise enterprise, EcoSystem system, Network sourceNetwork, Network targetNetwork) {
         initComponents();
+         this.userProcessContainer = userProcessContainer;
+            this.enterprise = enterprise;
+            this.userAccount = account;
+            this.system = system;
+            this.sourceNetwork = sourceNetwork;
+            this.targetNetwork = targetNetwork;
     }
 
     /**
@@ -27,10 +53,10 @@ public class DieticianRequestJPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        enterprise = new javax.swing.JLabel();
-        value = new javax.swing.JLabel();
+        JLABLE1 = new javax.swing.JLabel();
+        valueLabel = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        message = new javax.swing.JTextField();
+        messageJTextField = new javax.swing.JTextField();
         RequestTaskButton = new javax.swing.JButton();
         back = new javax.swing.JButton();
         imagelabel = new javax.swing.JLabel();
@@ -41,17 +67,17 @@ public class DieticianRequestJPanel extends javax.swing.JPanel {
         jPanel1.setForeground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        enterprise.setFont(new java.awt.Font("Sitka Display", 1, 24)); // NOI18N
-        enterprise.setForeground(new java.awt.Color(255, 255, 255));
-        enterprise.setText("Enterprise :");
-        jPanel1.add(enterprise, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 50, -1, -1));
-        jPanel1.add(value, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 50, 90, 30));
+        JLABLE1.setFont(new java.awt.Font("Sitka Display", 1, 24)); // NOI18N
+        JLABLE1.setForeground(new java.awt.Color(255, 255, 255));
+        JLABLE1.setText("Enterprise :");
+        jPanel1.add(JLABLE1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 50, -1, -1));
+        jPanel1.add(valueLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 50, 90, 30));
 
         jLabel1.setFont(new java.awt.Font("Sitka Heading", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Message  ");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 150, -1, -1));
-        jPanel1.add(message, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 150, 180, -1));
+        jPanel1.add(messageJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 150, 180, -1));
 
         RequestTaskButton.setBackground(new java.awt.Color(255, 204, 153));
         RequestTaskButton.setFont(new java.awt.Font("Sitka Heading", 1, 24)); // NOI18N
@@ -85,21 +111,70 @@ public class DieticianRequestJPanel extends javax.swing.JPanel {
 
     private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
         // TODO add your handling code here:
+        userProcessContainer.remove(this);
+        Component[] componentArray = userProcessContainer.getComponents();
+        Component component = componentArray[componentArray.length - 1];
+        CustomerLoginWorkAreaJPanel clwjp = (CustomerLoginWorkAreaJPanel) component;
+        clwjp.populateRequestTable(sourceNetwork);
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.previous(userProcessContainer);
     }//GEN-LAST:event_backActionPerformed
 
     private void RequestTaskButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RequestTaskButtonActionPerformed
         // TODO add your handling code here:
+        String message = messageJTextField.getText();
+        if (!message.isEmpty()) {
+            DieticianWorkRequest request = new DieticianWorkRequest();
+            request.setMessage(message);
+            request.setSender(userAccount);
+            request.setStatus("Sent");
+
+            Organization org = null;
+            Enterprise ent = null;
+            if (sourceNetwork != targetNetwork) {
+                for (Enterprise enterprise : targetNetwork.getEnterpriseDirectory().getEnterpriseList()) {
+                    if (enterprise instanceof HealthCareEnterprise) {
+                        ent = enterprise;
+                    }
+                    for (Organization organization : enterprise.getOrganizationDirectory().getOrganizationList()) {
+                        if (organization instanceof DieticianOrganization) {
+                            org = organization;
+                            break;
+                        }
+                    }
+                }
+            } else {
+                for (Enterprise enterprise : sourceNetwork.getEnterpriseDirectory().getEnterpriseList()) {
+                    if (enterprise instanceof HealthCareEnterprise) {
+                        ent = enterprise;
+                    }
+                    for (Organization organization : enterprise.getOrganizationDirectory().getOrganizationList()) {
+                        if (organization instanceof DieticianOrganization) {
+                            org = organization;
+                            break;
+                        }
+                    }
+                }
+            }
+            if (org != null) {
+                org.getWorkQueue().getWorkRequestList().add(request);
+                userAccount.getWorkQueue().getWorkRequestList().add(request);
+            }
+        } else {
+            JOptionPane.showMessageDialog(this, "Please enter correct input");
+        }
+        messageJTextField.setText("");
     }//GEN-LAST:event_RequestTaskButtonActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel JLABLE1;
     private javax.swing.JButton RequestTaskButton;
     private javax.swing.JButton back;
-    private javax.swing.JLabel enterprise;
     private javax.swing.JLabel imagelabel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField message;
-    private javax.swing.JLabel value;
+    private javax.swing.JTextField messageJTextField;
+    private javax.swing.JLabel valueLabel;
     // End of variables declaration//GEN-END:variables
 }
