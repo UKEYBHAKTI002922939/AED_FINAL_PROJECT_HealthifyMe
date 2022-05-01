@@ -142,7 +142,7 @@ public class WorkAreaMeditationInstructorJPanel extends javax.swing.JPanel {
         jPanel1.add(processJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 370, 190, 40));
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/vector-silver-grey-white-yoga-poses-seamless-repeat-pattern-background-design-great-healthy-lifestyle-workout-inspired-92210885.jpg"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/yogaa.jpg"))); // NOI18N
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 140, 1630, 540));
 
         add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1800, 1800));
