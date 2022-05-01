@@ -89,6 +89,7 @@ public class WorkAreaYogaInstructorJPanel extends javax.swing.JPanel {
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jPanel1.setBackground(new java.awt.Color(218, 212, 59));
         jPanel1.setLayout(null);
 
         workRequestJTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -120,9 +121,9 @@ public class WorkAreaYogaInstructorJPanel extends javax.swing.JPanel {
         jScrollPane1.setViewportView(workRequestJTable);
 
         jPanel1.add(jScrollPane1);
-        jScrollPane1.setBounds(210, 150, 680, 110);
+        jScrollPane1.setBounds(380, 130, 680, 110);
 
-        declineJButton.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        declineJButton.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         declineJButton.setText("Decline");
         declineJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -130,9 +131,9 @@ public class WorkAreaYogaInstructorJPanel extends javax.swing.JPanel {
             }
         });
         jPanel1.add(declineJButton);
-        declineJButton.setBounds(760, 380, 170, 35);
+        declineJButton.setBounds(920, 330, 170, 40);
 
-        assignJButton.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        assignJButton.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         assignJButton.setText("Assign to me");
         assignJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -140,18 +141,16 @@ public class WorkAreaYogaInstructorJPanel extends javax.swing.JPanel {
             }
         });
         jPanel1.add(assignJButton);
-        assignJButton.setBounds(160, 380, 180, 40);
-
-        valueLabel.setText("<value>");
+        assignJButton.setBounds(330, 330, 180, 40);
         jPanel1.add(valueLabel);
-        valueLabel.setBounds(640, 50, 158, 26);
+        valueLabel.setBounds(750, 50, 158, 20);
 
-        organizationLabel.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        organizationLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         organizationLabel.setText("ORGANIZATION");
         jPanel1.add(organizationLabel);
-        organizationLabel.setBounds(460, 50, 170, 30);
+        organizationLabel.setBounds(580, 50, 170, 30);
 
-        processJButton.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        processJButton.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         processJButton.setText("Process");
         processJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -159,11 +158,11 @@ public class WorkAreaYogaInstructorJPanel extends javax.swing.JPanel {
             }
         });
         jPanel1.add(processJButton);
-        processJButton.setBounds(440, 380, 190, 35);
+        processJButton.setBounds(630, 330, 190, 40);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/vehicle_repair.jpg"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/Staff-Wellbeing-Survey-Template-Thumbnail-2.png"))); // NOI18N
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(0, 0, 0, 0);
+        jLabel1.setBounds(20, 30, 1500, 750);
 
         add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1800, 1800));
     }// </editor-fold>//GEN-END:initComponents
