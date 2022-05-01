@@ -119,7 +119,7 @@ public class WorkAreaSalonJPanel extends javax.swing.JPanel {
         });
         add(declinejButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 350, 94, 30));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/salon_workarea.jpg"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/lightsalonpic.jpg"))); // NOI18N
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 640, 460));
     }// </editor-fold>//GEN-END:initComponents
 
