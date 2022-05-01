@@ -46,7 +46,7 @@ public class OtpJPanel extends javax.swing.JPanel {
 
         setLayout(null);
 
-        submitJButton.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        submitJButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         submitJButton.setText("VALIDATE OTP");
         submitJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -54,7 +54,7 @@ public class OtpJPanel extends javax.swing.JPanel {
             }
         });
         add(submitJButton);
-        submitJButton.setBounds(540, 290, 230, 35);
+        submitJButton.setBounds(530, 230, 170, 25);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -62,7 +62,7 @@ public class OtpJPanel extends javax.swing.JPanel {
         add(jLabel1);
         jLabel1.setBounds(500, 160, 50, 22);
         add(otpTextField);
-        otpTextField.setBounds(620, 160, 140, 22);
+        otpTextField.setBounds(620, 160, 140, 19);
 
         image.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/customer.login.jpg"))); // NOI18N
         add(image);

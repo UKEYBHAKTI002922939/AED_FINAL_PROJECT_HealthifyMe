@@ -64,7 +64,10 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
         backJButton = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(255, 255, 255));
         setLayout(null);
+
+        jScrollPane1.setBackground(new java.awt.Color(204, 255, 204));
 
         networkJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -95,14 +98,14 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
         jScrollPane1.setViewportView(networkJTable);
 
         add(jScrollPane1);
-        jScrollPane1.setBounds(144, 77, 404, 160);
+        jScrollPane1.setBounds(330, 110, 404, 110);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel1.setText("Name");
         add(jLabel1);
-        jLabel1.setBounds(220, 290, 60, 17);
+        jLabel1.setBounds(420, 280, 60, 17);
 
-        submitJButton.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        submitJButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         submitJButton.setText("Submit");
         submitJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -110,24 +113,24 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
             }
         });
         add(submitJButton);
-        submitJButton.setBounds(260, 370, 120, 37);
+        submitJButton.setBounds(490, 360, 120, 30);
         add(nameJTextField);
-        nameJTextField.setBounds(330, 290, 93, 19);
+        nameJTextField.setBounds(590, 280, 93, 19);
 
-        backJButton.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
-        backJButton.setText("<< Back");
+        backJButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        backJButton.setText("Back");
         backJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backJButtonActionPerformed(evt);
             }
         });
         add(backJButton);
-        backJButton.setBounds(10, 10, 120, 30);
+        backJButton.setBounds(10, 10, 80, 25);
 
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/workareacustomer.jpg"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/alex-ZR48YvUpk04-unsplash.jpg"))); // NOI18N
         add(jLabel2);
-        jLabel2.setBounds(0, 0, 1540, 1350);
+        jLabel2.setBounds(0, 0, 1540, 990);
     }// </editor-fold>//GEN-END:initComponents
 
     private void submitJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitJButtonActionPerformed

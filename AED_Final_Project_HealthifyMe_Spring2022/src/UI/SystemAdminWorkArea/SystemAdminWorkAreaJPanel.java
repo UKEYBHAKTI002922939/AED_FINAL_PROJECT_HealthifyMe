@@ -60,40 +60,44 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
 
         jSplitPane1.setLeftComponent(jPanel1);
 
+        jPanel2.setBackground(new java.awt.Color(0, 153, 153));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnManageNetwork.setBackground(new java.awt.Color(0, 153, 153));
-        btnManageNetwork.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        btnManageNetwork.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        btnManageNetwork.setForeground(new java.awt.Color(255, 255, 255));
         btnManageNetwork.setText("Manage Network");
         btnManageNetwork.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnManageNetworkActionPerformed(evt);
             }
         });
-        jPanel2.add(btnManageNetwork, new org.netbeans.lib.awtextra.AbsoluteConstraints(275, 154, 262, -1));
+        jPanel2.add(btnManageNetwork, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 160, 262, -1));
 
         btnManageEnterprise.setBackground(new java.awt.Color(0, 153, 153));
-        btnManageEnterprise.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        btnManageEnterprise.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        btnManageEnterprise.setForeground(new java.awt.Color(255, 255, 255));
         btnManageEnterprise.setText("Manage Enterprise");
         btnManageEnterprise.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnManageEnterpriseActionPerformed(evt);
             }
         });
-        jPanel2.add(btnManageEnterprise, new org.netbeans.lib.awtextra.AbsoluteConstraints(275, 259, 262, -1));
+        jPanel2.add(btnManageEnterprise, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 160, 262, -1));
 
         btnManageAdmin.setBackground(new java.awt.Color(0, 153, 153));
-        btnManageAdmin.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        btnManageAdmin.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        btnManageAdmin.setForeground(new java.awt.Color(255, 255, 255));
         btnManageAdmin.setText("Manage Enterprise Admin");
         btnManageAdmin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnManageAdminActionPerformed(evt);
             }
         });
-        jPanel2.add(btnManageAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(275, 360, -1, -1));
+        jPanel2.add(btnManageAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 270, -1, -1));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/Multiservices.jpg"))); // NOI18N
-        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 1, 1800, 1800));
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/istockphoto-1272715286-612x612.jpg"))); // NOI18N
+        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 1800, 1030));
 
         jSplitPane1.setRightComponent(jPanel2);
 

@@ -178,6 +178,7 @@ public class CustomerLoginWorkAreaJPanel extends javax.swing.JPanel {
         setBackground(new java.awt.Color(204, 204, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        workRequestJTable.setBackground(new java.awt.Color(255, 153, 153));
         workRequestJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},
@@ -273,10 +274,10 @@ public class CustomerLoginWorkAreaJPanel extends javax.swing.JPanel {
 
         jButton5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButton5.setText("REQUEST DOCTOR APPOINTMENT");
-        jPanel3.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 240, 30));
+        jPanel3.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 250, 30));
 
         jButton6.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jButton6.setText("REQUEST DIETICAN APPOINTMENT");
+        jButton6.setText("REQUEST DIETICIAN APPOINTMENT");
         jPanel3.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, -1, 30));
 
         add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 530, 280, 150));
