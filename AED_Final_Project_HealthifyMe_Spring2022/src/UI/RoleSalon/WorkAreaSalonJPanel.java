@@ -70,9 +70,7 @@ public class WorkAreaSalonJPanel extends javax.swing.JPanel {
         organizationjLabel.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         organizationjLabel.setText("Organization");
         add(organizationjLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, -1, -1));
-
-        valueLabel.setText("<value>");
-        add(valueLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 30, -1, -1));
+        add(valueLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 30, 100, 20));
 
         workRequestJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {

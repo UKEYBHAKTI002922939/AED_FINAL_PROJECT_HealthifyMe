@@ -84,8 +84,7 @@ public class RequestSalonJPanel extends javax.swing.JPanel {
         add(enterprice, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 110, -1, -1));
 
         valueLabel.setForeground(new java.awt.Color(163, 206, 215));
-        valueLabel.setText("<value>");
-        add(valueLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 110, 50, -1));
+        add(valueLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 110, 90, 20));
 
         messagejLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         messagejLabel.setText("Message");
@@ -101,9 +100,9 @@ public class RequestSalonJPanel extends javax.swing.JPanel {
                 RequetsjButtonActionPerformed(evt);
             }
         });
-        add(RequetsjButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 350, 190, 30));
+        add(RequetsjButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 350, 210, 30));
 
-        image.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/salon_workarea.jpg"))); // NOI18N
+        image.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/lightsalonpic.jpg"))); // NOI18N
         add(image, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 810, 500));
     }// </editor-fold>//GEN-END:initComponents
 
