@@ -5,11 +5,13 @@
  */
 package UI.RoleAdministrative;
 
+import Business.EcoSystem;
 import Business.Employee.Employee;
 import Business.Enterprise.Enterprise;
 import Business.Organization.Organization;
 import Business.Role.Role;
 import Business.UserAccount.UserAccount;
+import Business.UserAccount.UserAccountDirectory;
 import java.awt.CardLayout;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -27,6 +29,8 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
     
     private JPanel container;
     private Enterprise enterprise;
+    private UserAccountDirectory userAccDir;
+    private Organization organization;
     
     public ManageUserAccountJPanel(JPanel container, Enterprise enterprise) {
         initComponents();
@@ -77,6 +81,42 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
             }
         }
     }
+    
+    public void deleteSelectedRowFromTable(DefaultTableModel model){
+        int getSelectedRow = userJTable.getSelectedRow();
+        //System.out.println("selected row" + getSelectedRow);
+        //Check if there is a selected row
+        UserAccount c = null;
+        boolean x = false;
+        boolean y = false;
+        
+        if (getSelectedRow >= 0) {
+            System.out.println("entered");
+            System.out.println(getSelectedRow);
+            System.out.println(userJTable.getValueAt(getSelectedRow, 0));
+            UserAccount a = (UserAccount) userJTable.getValueAt(getSelectedRow, 0);
+            System.out.println("user account val : " + a);
+//            System.out.println("list val: " + organization.getUserAccountDirectory().getUserAccountList());
+            System.out.println("entered again");
+            for (Organization organization : enterprise.getOrganizationDirectory().getOrganizationList()) {
+                for (UserAccount b : organization.getUserAccountDirectory().getUserAccountList()) {
+                    System.out.println("entered for loop");
+                    if(a.getUsername() == b.getUsername()){
+                        organization.getUserAccountDirectory().deleteUserAccount(b);
+                        popData();
+                    }
+                    
+                }
+            }
+            
+
+            JOptionPane.showMessageDialog(null, "Deleted row");
+        }
+        else
+        {
+            JOptionPane.showMessageDialog(null, "Please select the row to delete");
+        }
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -101,6 +141,7 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
         organizationJComboBox = new javax.swing.JComboBox();
         jLabel4 = new javax.swing.JLabel();
         roleJComboBox = new javax.swing.JComboBox();
+        btn_delete = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 153, 153));
@@ -216,10 +257,18 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
         });
         add(roleJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 330, 146, -1));
 
+        btn_delete.setText("Delete");
+        btn_delete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_deleteActionPerformed(evt);
+            }
+        });
+        add(btn_delete, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 90, -1, -1));
+
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/BWSupportingEmployees-image-.jpg"))); // NOI18N
-        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 0, 1440, 810));
+        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 80, 1440, 810));
     }// </editor-fold>//GEN-END:initComponents
 
     private void createUserJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createUserJButtonActionPerformed
@@ -265,9 +314,19 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_employeeJComboBoxActionPerformed
 
+    private void btn_deleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_deleteActionPerformed
+        // TODO add your handling code here:
+        DefaultTableModel model = (DefaultTableModel) userJTable.getModel();
+        int response = JOptionPane.showConfirmDialog(null, "Are you sure, you want to delete this record?", "Confirmation", JOptionPane.YES_NO_OPTION);
+        if (response == JOptionPane.YES_OPTION) {
+            deleteSelectedRowFromTable(model);
+        }
+    }//GEN-LAST:event_btn_deleteActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backjButton1;
+    private javax.swing.JButton btn_delete;
     private javax.swing.JButton createUserJButton;
     private javax.swing.JComboBox employeeJComboBox;
     private javax.swing.JLabel jLabel1;

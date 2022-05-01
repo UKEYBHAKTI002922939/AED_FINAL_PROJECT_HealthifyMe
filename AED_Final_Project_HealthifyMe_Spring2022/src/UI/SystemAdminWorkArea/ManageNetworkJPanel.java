@@ -98,24 +98,24 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
         jScrollPane1.setViewportView(networkJTable);
 
         add(jScrollPane1);
-        jScrollPane1.setBounds(330, 110, 404, 110);
+        jScrollPane1.setBounds(370, 110, 404, 110);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel1.setText("Name");
+        jLabel1.setText("Network Name");
         add(jLabel1);
-        jLabel1.setBounds(420, 280, 60, 17);
+        jLabel1.setBounds(60, 300, 110, 17);
 
         submitJButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        submitJButton.setText("Submit");
+        submitJButton.setText("Add");
         submitJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 submitJButtonActionPerformed(evt);
             }
         });
         add(submitJButton);
-        submitJButton.setBounds(490, 360, 120, 30);
+        submitJButton.setBounds(140, 350, 120, 25);
         add(nameJTextField);
-        nameJTextField.setBounds(590, 280, 93, 19);
+        nameJTextField.setBounds(210, 300, 93, 19);
 
         backJButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         backJButton.setText("Back");

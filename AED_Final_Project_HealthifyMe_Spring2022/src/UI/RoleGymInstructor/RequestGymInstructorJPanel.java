@@ -74,9 +74,7 @@ public class RequestGymInstructorJPanel extends javax.swing.JPanel {
         enterpriseLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         enterpriseLabel.setText("Enterprise:");
         add(enterpriseLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(204, 89, -1, 30));
-
-        valueLabel.setText("<value>");
-        add(valueLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(312, 91, 110, 30));
+        add(valueLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(312, 91, 190, 30));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel1.setText("Message");
@@ -90,7 +88,7 @@ public class RequestGymInstructorJPanel extends javax.swing.JPanel {
         add(messageJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(312, 163, 89, -1));
 
         backJButton.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        backJButton.setText("<<Back");
+        backJButton.setText("Back");
         backJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backJButtonActionPerformed(evt);
@@ -98,7 +96,7 @@ public class RequestGymInstructorJPanel extends javax.swing.JPanel {
         });
         add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 111, -1));
 
-        requestTestJButton.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        requestTestJButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         requestTestJButton.setText("Request Task");
         requestTestJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -107,7 +105,7 @@ public class RequestGymInstructorJPanel extends javax.swing.JPanel {
         });
         add(requestTestJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(225, 239, -1, -1));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/appliance_repair.jpg"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/lightsalonpic.jpg"))); // NOI18N
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1800, 1800));
     }// </editor-fold>//GEN-END:initComponents
 

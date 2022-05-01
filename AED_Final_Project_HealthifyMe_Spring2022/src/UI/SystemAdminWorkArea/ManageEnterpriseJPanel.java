@@ -117,7 +117,7 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
         jScrollPane1.setViewportView(enterpriseJTable);
 
         add(jScrollPane1);
-        jScrollPane1.setBounds(640, 90, 523, 100);
+        jScrollPane1.setBounds(623, 90, 540, 100);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -127,7 +127,7 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
 
         networkJComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         add(networkJComboBox);
-        networkJComboBox.setBounds(360, 90, 136, 19);
+        networkJComboBox.setBounds(360, 90, 180, 30);
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -135,7 +135,7 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
         add(jLabel2);
         jLabel2.setBounds(190, 190, 70, 17);
         add(nameJTextField);
-        nameJTextField.setBounds(360, 190, 136, 19);
+        nameJTextField.setBounds(360, 190, 180, 30);
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
@@ -145,7 +145,7 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
 
         enterpriseTypeJComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         add(enterpriseTypeJComboBox);
-        enterpriseTypeJComboBox.setBounds(360, 140, 136, 19);
+        enterpriseTypeJComboBox.setBounds(360, 140, 180, 30);
 
         submitJButton.setBackground(new java.awt.Color(255, 204, 204));
         submitJButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -156,7 +156,7 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
             }
         });
         add(submitJButton);
-        submitJButton.setBounds(250, 250, 120, 30);
+        submitJButton.setBounds(300, 250, 120, 30);
 
         backJButton.setBackground(new java.awt.Color(255, 204, 204));
         backJButton.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -167,7 +167,7 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
             }
         });
         add(backJButton);
-        backJButton.setBounds(10, 10, 70, 20);
+        backJButton.setBounds(10, 10, 70, 30);
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/health_How-to-live-a-healthy-lifestyle-01.jpg"))); // NOI18N
         add(jLabel4);

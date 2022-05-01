@@ -75,23 +75,21 @@ public class RequestYogaInstructorJPanel extends javax.swing.JPanel {
         enterpriseLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         enterpriseLabel.setText("ENTERPRISE");
         add(enterpriseLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 80, -1, 30));
-
-        valueLabel.setText("<value>");
         add(valueLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 80, 110, 30));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel1.setText("MESSAGE");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 160, -1, -1));
+        jLabel1.setText("Message");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 160, -1, -1));
 
         messageJTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 messageJTextFieldActionPerformed(evt);
             }
         });
-        add(messageJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 160, 89, -1));
+        add(messageJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 160, 89, -1));
 
         backJButton.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        backJButton.setText("<<Back");
+        backJButton.setText("Back");
         backJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backJButtonActionPerformed(evt);
@@ -99,16 +97,16 @@ public class RequestYogaInstructorJPanel extends javax.swing.JPanel {
         });
         add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 111, -1));
 
-        requestTestJButton.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        requestTestJButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         requestTestJButton.setText("REQUEST TASK");
         requestTestJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 requestTestJButtonActionPerformed(evt);
             }
         });
-        add(requestTestJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 230, -1, -1));
+        add(requestTestJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 220, -1, -1));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/vehicle_repair.jpg"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/lightsalonpic.jpg"))); // NOI18N
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1800, 1800));
     }// </editor-fold>//GEN-END:initComponents
 

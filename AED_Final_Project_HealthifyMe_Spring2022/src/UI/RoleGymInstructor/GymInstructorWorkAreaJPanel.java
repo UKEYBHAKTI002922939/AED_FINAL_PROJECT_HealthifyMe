@@ -157,9 +157,9 @@ public class GymInstructorWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
         jPanel1.add(processJButton);
-        processJButton.setBounds(370, 230, 190, 35);
+        processJButton.setBounds(370, 230, 190, 37);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/appliance_repair.jpg"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/lightsalonpic.jpg"))); // NOI18N
         jPanel1.add(jLabel1);
         jLabel1.setBounds(0, 0, 1800, 1800);
 
